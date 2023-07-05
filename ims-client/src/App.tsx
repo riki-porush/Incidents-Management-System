@@ -23,7 +23,10 @@ function App() {
       <Box sx={{ display: 'flex' }}>
         <LeftDrawer />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+
+         {/* All the components go here */}
           <Example />
+          
         </Box>
       </Box>
     </Provider>
