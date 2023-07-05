@@ -1,12 +1,100 @@
-import express from 'express'
+// import bodyParser from 'body-parser'
+// import cors from 'cors'
+// import express from 'express'
+// import mongoose from 'mongoose'
+// import swaggerJSDoc from 'swagger-jsdoc'
+// import swaggerUI from 'swagger-ui-express'
+
+// import config from './config/config'
+// import userRout from './routes/userRout'
+
+// /**
+//  * this is just a basic request/response
+//  *
+//  */
+
+// const swaggerOptions = {
+//   definition: {
+//     openapi: '3.0.0',
+//     info: {
+//       title: 'Your API',
+//       version: '1.0.0',
+//       description: 'API documentation using Swagger',
+//     },
+//     servers: [
+//       {
+//         url: `http://localhost:${config.server.port}`, // Replace with your server URL
+//       },
+//     ],
+//     tags: [
+//       {
+//         name: 'users',
+//       },
+//     ],
+//   },
+//   apis: ['./routes/*.ts', './controllers/*.ts'],
+// }
+
+// const swaggerSpecs = swaggerJSDoc(swaggerOptions);
+// const app = express()
+
+// // Swagger UI
+// app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
+// app.use(cors())
+// app.use(bodyParser.json())
+// app.use('/users', userRout)
+// mongoose
+//   .connect(config.mongo.url)
+//   .then(() => {
+//     console.info('Connected to mongoDB.')
+//     // Start the server
+//     // note: if you run port=5000
+//     const port = config.server.port
+//     app.listen(port, () => {
+//       console.log(`Server is listening on port ${port}`)
+//     })
+//   })
+//   .catch((error) => {
+//     console.error('Unable to connect.')
+//     console.error(error)
+//   })
+
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import config from './config/config'
+import express from 'express'
 import mongoose from 'mongoose'
-import incidentRout from './routes/IncidentRout'
+import swaggerJSDoc from 'swagger-jsdoc'
+import swaggerUI from 'swagger-ui-express'
 
+import incidentRout from './routes/IncidentRout'
+import config from './config/config'
+
+const swaggerOptions: swaggerJSDoc.Options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Your API',
+      version: '1.0.0',
+      description: 'API documentation using Swagger',
+    },
+    servers: [
+      {
+        url: 'http://localhost:3000', // Replace with your server URL
+      },
+    ],
+    tags: [
+      {
+        name: 'users',
+      },
+    ],
+  },
+  apis: ['./routes/*.ts', './controllers/*.ts'],
+};
+const swaggerSpecs = swaggerJSDoc(swaggerOptions);
 
 const app = express()
+
+app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/incident', incidentRout)
