@@ -10,6 +10,7 @@ import LeftDrawer from './components/Drawer';
 import counterSlice from "./redux/counterSlice"
 import Examle from './componnents/examle';
 import { configureStore } from '@reduxjs/toolkit';
+import TabsUp from './components/tabs/Tabs';
 
 const  myStore = configureStore({
   reducer:{
@@ -26,7 +27,8 @@ function App() {
 
     <Provider store={myStore}>
      <Examle></Examle>
-       <LeftDrawer />
+       {/* <LeftDrawer /> */}
+       <TabsUp></TabsUp>
     </Provider>
 
   );
