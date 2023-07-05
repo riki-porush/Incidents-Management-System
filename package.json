@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "redux-tooltip": "^0.7.3"
+  }
+}

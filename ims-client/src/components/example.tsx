@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../App';
 
 
-export default function Examle() {
+export default function Exampple() {
 
   const counter = useSelector((myStore:RootState) => myStore.counterSlice.counter)
 
