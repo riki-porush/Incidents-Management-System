@@ -4,7 +4,10 @@ import LeftDrawer from './components/Drawer';
 
 function App() {
   return (
-<LeftDrawer></LeftDrawer>
+    <div className="App"> 
+      <LeftDrawer />
+    
+    </div>
   );
 }
 
