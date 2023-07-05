@@ -11,7 +11,7 @@ export default function Examle() {
   return (
     <div className='container'>
       <h2>Counter:{counter}</h2>
-      <button>Add 1</button>
+      <button>Add 1 to the counter</button>
     </div>
   )
 }
