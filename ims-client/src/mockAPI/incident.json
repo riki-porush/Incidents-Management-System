@@ -4,7 +4,9 @@
         "name": "Critical Event",
         "status": "Active",
         "description": "Issue Description",
-        "date": "04/07/2023",
+        "priority":"P1",
+        "date": "2023-07-05T10:30:00Z",
+        "type":"comment",
         "durationFault": "3",
         "CaringTeam": "Team A"
       },
@@ -13,7 +15,9 @@
         "name": "Stuck Incident",
         "status": "Active",
         "description": "Issue Description",
-        "date": "21/06/2023",
+        "priority":"P0",
+        "date": "2023-07-01T10:30:00Z",
+        "type":"securing",
         "durationFault": "1",
         "CaringTeam": "Team A"
       },
@@ -22,7 +26,9 @@
         "name": "Delayed Problem",
         "status": "Active",
         "description": "Issue Description",
-        "date": "10/06/2023",
+        "priority":"P1",
+        "date": "2023-06-15T10:30:00Z",
+        "type":"technical",
         "durationFault": "2",
         "CaringTeam": "Team A"
       },
@@ -31,7 +37,9 @@
         "name": "Locked Trouble",
         "status": "Active",
         "description": "Issue Description",
-        "date": "05/05/2023",
+        "priority":"P2",
+        "date": "2023-06-03T10:30:00Z",
+        "type":"technical",
         "durationFault": "1",
         "CaringTeam": "Team A"
       },
@@ -40,7 +48,9 @@
         "name": "Paused Incident",
         "status": "Active",
         "description": "Issue Description",
-        "date": "01/05/2023",
+        "priority":"P0",
+        "date": "2023-05-28T10:30:00Z",
+        "type":"securing",
         "durationFault": "2",
         "CaringTeam": "Team A"
       },
@@ -49,7 +59,9 @@
         "name": "Resolved Event",
         "status": "Resolved",
         "description": "Issue Description",
-        "date": "23/04/2023",
+        "priority":"P1",
+        "date": "2023-05-17T10:30:00Z",
+        "type":"comment",
         "durationFault": "2",
         "CaringTeam": "Team A"
       },
@@ -58,7 +70,9 @@
         "name": "Suspended Event",
         "status": "Active",
         "description": "Issue Description",
-        "date": "14/04/2023",
+        "priority":"P2",
+        "date": "2023-05-02T10:30:00Z",
+        "type":"securing",
         "durationFault": "1",
         "CaringTeam": "Team A"
       },
@@ -67,7 +81,9 @@
         "name": "Unresolved Incident",
         "status": "Active",
         "description": "Issue Description",
-        "date": "02/04/2023",
+        "priority":"P3",
+        "date": "2023-04-29T10:30:00Z",
+        "type":"technical",
         "durationFault": "1",
         "CaringTeam": "Team A"
       }
