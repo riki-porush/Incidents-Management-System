@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import { Provider } from 'react-redux';
 import './App.css';
 
+import counterSlice from "./redux/counterSlice"
+import Examle from './componnents/examle';
+import { configureStore } from '@reduxjs/toolkit';
+
+const  myStore = configureStore({
+  reducer:{
+    counterSlice
+  }
+})
+//
+export type RootState = ReturnType<typeof myStore.getState>
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof myStore.dispatch
+//
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={myStore}>
+     <Examle></Examle>
+    </Provider>
   );
 }
 
