@@ -10,10 +10,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
 
-<Button  variant="outlined" color='success' >Outlined</Button>
-<Button variant="contained" style={{ backgroundColor: theme.palette.secondary.main }}>
-          Custom Color Button
-          </Button>
+
           
      </ThemeProvider>
   );
