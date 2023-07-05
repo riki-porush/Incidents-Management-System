@@ -4,6 +4,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import './App.css';
+import { ThemeProvider } from '@emotion/react';
+import theme from './theme';
+import { Button, colors } from '@mui/material';
 import LeftDrawer from './components/Drawer';
 
 
