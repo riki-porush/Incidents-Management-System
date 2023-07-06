@@ -1,6 +1,6 @@
 
-import IncidentSchema from '../models/IncidentModel';
 import { Request, Response } from 'express';
+import IncidentSchema from '../models/IncidentModel';
 
 export default class IncidenceController {
 

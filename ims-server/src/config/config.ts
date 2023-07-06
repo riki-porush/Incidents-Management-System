@@ -4,8 +4,7 @@ dotenv.config()
 
 // DECLARE ALL VARIABLES
 const SERVER_PORT = 7000
-// const MONGO_URL_LOCAL = 'mongodb://127.0.0.1:27017/ims_db'
-const MONGO_URL_LOCAL = "mongodb://localhost:27017/aaaa"
+const MONGO_URL_LOCAL = 'mongodb://127.0.0.1:27017/ims_db'
 
 // CREATE CONFIG OBJECT
 const config = {

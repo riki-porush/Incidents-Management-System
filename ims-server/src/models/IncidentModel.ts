@@ -1,5 +1,5 @@
-import mongoose, {  Schema } from 'mongoose';
-import { IIncident } from '../interfaces/IncidentInterface ';
+import mongoose, { Schema } from 'mongoose';
+import { IIncident } from '../interfaces/IncidentInterface';
 
 export const IncidentSchema = new Schema<IIncident>({
     id: {
