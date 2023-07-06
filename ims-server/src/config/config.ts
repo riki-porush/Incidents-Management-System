@@ -3,8 +3,9 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 // DECLARE ALL VARIABLES
-const SERVER_PORT = 5000
-const MONGO_URL_LOCAL = 'mongodb://127.0.0.1:27017/ims_db'
+const SERVER_PORT = 7000
+// const MONGO_URL_LOCAL = 'mongodb://127.0.0.1:27017/ims_db'
+const MONGO_URL_LOCAL = "mongodb://localhost:27017/aaaa"
 
 // CREATE CONFIG OBJECT
 const config = {
@@ -15,6 +16,8 @@ const config = {
     port: SERVER_PORT
   }
 }
+
+// Write the updated swagger.json back to the file
 
 // CHECK FOR ENVIRONMENT
 
