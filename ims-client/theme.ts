@@ -7,12 +7,12 @@ const theme = createTheme({
       //לבן
         primary: {
            light: '#2F854F',
-          main: '#2F854F',  //הצבע הראשי
+          main: '#2F854F', 
          dark: '#2F854F',
           contrastText: '#aa00ff',
          
         },
-        //אפור
+       
         secondary: {
             light: '#D9D9D9',
             main: '#D9D9D9',
