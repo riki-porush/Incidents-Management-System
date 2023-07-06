@@ -1,20 +1,25 @@
-import { Provider } from 'react-redux'
-import React from 'react'
+import { Provider } from 'react-redux';
+import React from 'react';
+import './App.css';
+import LeftDrawer from './components/drawer/Drawer';
+import Example from './components/example/example';
+import { configureStore } from '@reduxjs/toolkit';
+import { Box } from '@mui/material';
 
-import './App.css'
-import LeftDrawer from './components/drawer/Drawer'
-import configureStore from './redux/configureStore'
 
-const store = configureStore()
+
 
 function App() {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <LeftDrawer></LeftDrawer>
-      </Provider>
-    </div>
-  )
+ 
+      <Box sx={{ display: 'flex' }}>
+        <LeftDrawer />
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+
+          <Example />  
+        </Box>
+      </Box>
+  );
 }
 
-export default App
+export default App;
