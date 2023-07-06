@@ -37,7 +37,7 @@ export default function Widget({title,aggregation,img}:WidgetProps) {
       <Grid container spacing={3}>
         <Grid item>
           <ButtonBase sx={{ width: 102, height: 102 }}>
-            {img ? <Img src={img} />
+            {img ? <Img src={img} alt={title}/>
              : <Box sx={{ width: 102, height: 102, borderRadius: '10px', backgroundColor: '#2F854F1A' }}/>}    
           </ButtonBase>
         </Grid>
