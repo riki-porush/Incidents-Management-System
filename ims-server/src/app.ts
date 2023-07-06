@@ -1,25 +1,29 @@
-import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import config from './config/config'
+import express from 'express'
 import mongoose from 'mongoose'
-import userRout from './routes/userRout'
+import swaggerUI from 'swagger-ui-express'
 
-/**
- * this is just a basic request/response
- *
- */
+import fs from 'fs'
+import config from './config/config'
+import incidentRout from './routes/IncidentRout'
+
+const swaggerFile: any = (process.cwd() + "/src/Swagger.json");
+const swaggerData: any = fs.readFileSync(swaggerFile, 'utf8');
+const swaggerDocument = JSON.parse(swaggerData);
+swaggerDocument.servers[0].url = `http://localhost:${config.server.port}`
+
 const app = express()
-// Middleware
+
+app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use(cors())
 app.use(bodyParser.json())
-app.use('/users', userRout)
+app.use('/incident', incidentRout)
+
 mongoose
   .connect(config.mongo.url)
   .then(() => {
     console.info('Connected to mongoDB.')
-    // Start the server
-    // note: if you run port=5000
     const port = config.server.port
     app.listen(port, () => {
       console.log(`Server is listening on port ${port}`)
