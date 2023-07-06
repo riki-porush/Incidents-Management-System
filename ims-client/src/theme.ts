@@ -6,17 +6,17 @@ const theme = createTheme({
     palette: {
       //לבן
         primary: {
-           light: '#aa00ff',
-          main: '#FFFFFF',  //הצבע הראשי
-         dark: '#aa00ff',
+           light: '#2F854F',
+          main: '#2F854F',  //הצבע הראשי
+         dark: '#2F854F',
           contrastText: '#aa00ff',
          
         },
         //אפור
         secondary: {
-            light: '#aa00ff',
+            light: '#D9D9D9',
             main: '#D9D9D9',
-            dark: '#aa00ff',
+            dark: '#D9D9D9',
             contrastText: '#FFFFFF',
           },
           success: {
@@ -38,12 +38,12 @@ const theme = createTheme({
             contrastText:'#fff'
           },
           //???
-          info: {
-            light: '#aa00ff',
-            dark: '#aa00ff',
-            main: '#aa00ff',
-            contrastText:'#FFFFFF',
-          },
+          // info: {
+          //   light: '#aa00ff',
+          //   dark: '#aa00ff',
+          //   main: '#aa00ff',
+          //   contrastText:'#FFFFFF',
+          // },
         },
     typography: {
         fontFamily: 'Poppins',

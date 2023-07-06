@@ -1,38 +1,20 @@
 import React from 'react';
-
-
-import { Provider } from 'react-redux';
-
+import logo from './logo.svg';
 import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import theme from './theme';
-import { Button, colors } from '@mui/material';
-import LeftDrawer from './components/Drawer';
+import { Button } from '@mui/material';
 
 
-import counterSlice from "./redux/counterSlice"
-import Examle from './componnents/examle';
-import { configureStore } from '@reduxjs/toolkit';
-
-const  myStore = configureStore({
-  reducer:{
-    counterSlice
-  }
-})
-//
-export type RootState = ReturnType<typeof myStore.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof myStore.dispatch
-//
-function App() {
+const App: React.FC = () => {
   return (
+    <ThemeProvider theme={theme}>
 
-    <Provider store={myStore}>
-     <Examle></Examle>
-       <LeftDrawer />
-    </Provider>
 
+     </ThemeProvider>
   );
-}
-
+};
 export default App;
+
+
+
