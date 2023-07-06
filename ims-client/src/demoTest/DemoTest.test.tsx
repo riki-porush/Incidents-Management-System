@@ -5,7 +5,7 @@ import DemoComponent from './DemoComponent';
 import { log } from 'console';
 
 const name = 'John';
-//verifies  with the correct name and checks if the expected text is present in the rendered component.
+//verifies with the correct name and checks if the expected text is present in the rendered component.
 test('renders component with correct name', () => {
   const { getByText } = render(<DemoComponent name={name} />);
   const componentText = getByText(`Hello, ${name}!`);
