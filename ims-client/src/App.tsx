@@ -12,7 +12,7 @@ const store = configureStore()
 function App() {
   return (
     <div className="App">
-         <ThemeProvider theme={theme}>
+          <ThemeProvider theme={theme}>
       <Provider store={store}>
         <LeftDrawer></LeftDrawer>
       </Provider>
