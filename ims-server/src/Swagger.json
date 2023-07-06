@@ -1,0 +1,155 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": " Your API",
+        "version": "1.0.0",
+        "description": "API documentation using Swagger"
+    },
+    "servers": [
+        {
+            "url": ""
+        }
+    ],
+    "tags": [
+        {
+            "name": "incident"
+        }
+    ],
+    "paths": {
+        "/incident": {
+            "get": {
+                "tags": [
+                    "incident"
+                ],
+                "description": "Retrieve all incidents",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "/incident/{id}": {
+            "get": {
+                "tags": [
+                    "incident"
+                ],
+                "description": "get incident by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "/incident/addIncident": {
+            "post": {
+                "tags": [
+                    "incident"
+                ],
+                "description": "add an incident",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Incident"
+                            }
+                        },
+                        "id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "/incident/updateIncidence/{id}": {
+            "put": {
+                "tags": [
+                    "incident"
+                ],
+                "description": "update an incident",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Incident"
+                            }
+                        }
+                    },
+                    "required": false
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "components": {
+            "schemas": {
+                "Incident": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "status": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "priority": {
+                            "type": "string"
+                        },
+                        "date": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "durationFault": {
+                            "type": "integer"
+                        },
+                        "caringTeam": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
