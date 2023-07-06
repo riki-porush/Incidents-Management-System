@@ -1,6 +1,6 @@
-import { colors } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
-import React, { useContext } from 'react';
+import { colors } from '@mui/material'
+import { createTheme } from '@mui/material/styles'
+import React, { useContext } from 'react'
 const theme = createTheme({
 
     palette: {
