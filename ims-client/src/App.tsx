@@ -14,11 +14,13 @@ const store = configureStore()
 function App() {
   return (
     <div className="App">
+          <ThemeProvider theme={theme}>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
         <LeftDrawer></LeftDrawer>
         </ThemeProvider>
       </Provider>
+      </ThemeProvider>
     </div>
   )
 }
