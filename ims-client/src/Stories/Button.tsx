@@ -3,7 +3,6 @@ import './button.css';
 
 interface ButtonProps {
   /**
-   * האם זו הקריאה לפעולה העיקרית בעמוד?
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
