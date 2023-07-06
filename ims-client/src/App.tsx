@@ -1,20 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { ThemeProvider } from '@emotion/react';
-import theme from './theme';
-import { Button } from '@mui/material';
 
+import { Provider } from 'react-redux'
+import React from 'react'
 
-const App: React.FC = () => {
+import './App.css'
+import LeftDrawer from './components/drawer/Drawer'
+import configureStore from './redux/configureStore'
+import Table from './components/Table/Table'
+import { ThemeProvider } from '@emotion/react'
+import theme from './theme'
+
+const store = configureStore()
+
+function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <div className="App">
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+        <LeftDrawer></LeftDrawer>
+        </ThemeProvider>
+      </Provider>
+    </div>
+  )
+}
 
-
-     </ThemeProvider>
-  );
-};
-export default App;
-
-
+export default App
 

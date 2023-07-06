@@ -1,0 +1,34 @@
+import { GridFooterContainer, useGridApiContext } from "@mui/x-data-grid";
+import { PaginationComponent } from "./Pagination";
+import CustomTextField from "../CustomTextField/CustomTextfield";
+import { useState } from "react";
+import { PAGE_SIZE } from "./Table";
+import React from 'react';
+
+export const CustomFooter = (): JSX.Element => {
+
+    const gridApi = useGridApiContext();
+    const [rowCount, setRowCount] = useState(gridApi.current?.getRowsCount() || 0);
+
+    const handleRowCountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newRowCount = parseInt(event.target.value, 10);
+        if (newRowCount <= 100 && newRowCount >= 0) {
+            setRowCount(newRowCount);
+            gridApi.current?.setPageSize(newRowCount);
+        }
+    };
+
+    return (
+        <GridFooterContainer>
+            <PaginationComponent />
+            <div style={{ flexGrow: 1, textAlign: 'right' }} >
+                show:
+            </div>
+            <CustomTextField
+                type="number"
+                value={PAGE_SIZE}
+                onChange={handleRowCountChange}
+            />
+        </GridFooterContainer>
+    );
+};
