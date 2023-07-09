@@ -4,12 +4,16 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
-           light: '#aa00ff',
-           main: '#FFFFFF',  //הצבע הראשי
-           dark: '#aa00ff',
-           contrastText: '#aa00ff',
+
+        
+           light: '#2F854F1A',
+          main: '#2F854F',
+         dark: '#2F854F',
+          contrastText: '#FFFFFF',
+
         },
         secondary: {
+          //gray
             light: '#D9D9D9',
             main: '#D9D9D9',
             dark: '#D9D9D9',
@@ -33,13 +37,13 @@ const theme = createTheme({
             main: '#ED6C02',
             contrastText:'#fff'
           },
-          //???
-          // info: {
-          //   light: '#AA00FF',
-          //   dark: '#AA00FF',
-          //   main: '#AA00FF',
-          //   contrastText:'#FFFFFF',
-          // },
+      //white
+          info: {
+            light: '#000000',
+            dark: '#000000',
+            main: '#000000',
+            contrastText:'#000000',
+          },
         },
     typography: {
         fontFamily: 'Poppins',
