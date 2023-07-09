@@ -1,4 +1,3 @@
-
 import { Provider } from 'react-redux'
 import React from 'react'
 
@@ -14,16 +13,13 @@ const store = configureStore()
 function App() {
   return (
     <div className="App">
-          <ThemeProvider theme={theme}>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
         <LeftDrawer></LeftDrawer>
         </ThemeProvider>
       </Provider>
-      </ThemeProvider>
     </div>
   )
 }
 
 export default App
-
