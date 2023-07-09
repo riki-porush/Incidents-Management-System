@@ -7,19 +7,39 @@ import configureStore from './redux/configureStore'
 import Table from './components/Table/Table'
 import { ThemeProvider } from '@emotion/react'
 import theme from './theme'
+import { Box } from '@mui/material'
+import { CustomFooter } from './components/Table/Footer'
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 
-const store = configureStore()
+// const store = configureStore()
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Provider store={store}>
+//         <ThemeProvider theme={theme}>
+//         <LeftDrawer></LeftDrawer>
+//         </ThemeProvider>
+//       </Provider>
+//     </div>
+//   )
+// }
+
+// export default App
+
 
 function App() {
+
   return (
-    <div className="App">
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-        <LeftDrawer></LeftDrawer>
-        </ThemeProvider>
-      </Provider>
-    </div>
-  )
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: 'flex' }}>
+        <LeftDrawer />
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          {/* <Here put all the components /> */}
+        </Box>
+      </Box>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
