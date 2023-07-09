@@ -1,0 +1,1 @@
+import UpTabs from "./Tabs";

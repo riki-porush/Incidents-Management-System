@@ -42,5 +42,15 @@ export default class IncidenceController {
         }
     }
 
+    public async getIncidentByStatus(req: Request, res: Response) {
+        try {
+            const incident = await IncidentSchema.find({status:req.params.status})
+            if (incident)
+                return res.status(200).json(incident);
+            return res.status(404).json({ message: "incident not found" });
+        } catch (error) {
+            return res.status(404).json({ message: error });
+        }
+    }
 }
 

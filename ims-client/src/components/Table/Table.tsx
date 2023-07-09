@@ -25,7 +25,6 @@ const Table = <T extends object>({ columns, rows }: TableProps<T>) => {
                 footer: CustomFooter,
                 columnSortedDescendingIcon: ExpandMoreIcon,
                 columnSortedAscendingIcon: ExpandLessIcon,
-
             }}
 
             disableColumnMenu
