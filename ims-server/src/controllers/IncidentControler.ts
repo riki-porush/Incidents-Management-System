@@ -1,4 +1,3 @@
-
 import IncidentSchema from '../models/IncidentModel';
 import { Request, Response } from 'express';
 
