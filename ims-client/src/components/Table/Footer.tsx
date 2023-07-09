@@ -24,9 +24,11 @@ export const CustomFooter = (): JSX.Element => {
             <div style={{ flexGrow: 1, textAlign: 'right' }} >
                 show:
             </div>
-            <CustomTextField
+            <CustomTextField 
                 type="number"
                 value={PAGE_SIZE}
+                //TODO
+                size='small'
                 onChange={handleRowCountChange}
             />
         </GridFooterContainer>
