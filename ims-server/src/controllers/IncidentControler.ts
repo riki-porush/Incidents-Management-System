@@ -1,17 +1,17 @@
 
-import   IncidentSchema  from '../models/IncidentModel';
+import IncidentSchema from '../models/IncidentModel';
 import { Request, Response } from 'express';
 
 export default class IncidenceController {
-  
-  public async addIncident(req: Request, res: Response) {
-    try {
-      const incident = await IncidentSchema.create(req.body);
-      return res.status(200).json(incident);
-    } catch (error) {
-      return res.status(404).json({ message: error });
+
+    public async addIncident(req: Request, res: Response) {
+        try {
+            const incident = await IncidentSchema.create(req.body);
+            return res.status(200).json(incident);
+        } catch (error) {
+            return res.status(404).json({ message: error });
+        }
     }
-  }
     public async updateIncidence(req: Request, res: Response) {
         try {
             const incidence = await IncidentSchema.findByIdAndUpdate(req.params.id, req.body);
@@ -22,7 +22,6 @@ export default class IncidenceController {
             res.status(404).json({ message: error });
         }
     }
-
     public async getAllIncidents(req: Request, res: Response) {
         try {
             const incidents = await IncidentSchema.find();
