@@ -4,10 +4,10 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
-           light: '#2F854F1A',
-          main: '#2F854F',
-         dark: '#2F854F',
-          contrastText: '#FFFFFF',
+           light: '#aa00ff',
+           main: '#FFFFFF',  //הצבע הראשי
+           dark: '#aa00ff',
+           contrastText: '#aa00ff',
         },
         secondary: {
             light: '#D9D9D9',
