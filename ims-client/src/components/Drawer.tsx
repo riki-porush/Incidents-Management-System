@@ -12,8 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import logo from '../images/logo.png';
-
+import logo from '../../images/logo.png';
 
 const drawerWidth = 240;
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -99,8 +98,8 @@ export default function LeftDrawer() {
           <img
             src={logo}
             onClick={handleDrawerOpen}
-            width={50}
-            height={50}
+            width={48}
+            height={66}
             alt="Logo"
           />
         </DrawerHeader>
@@ -111,7 +110,7 @@ export default function LeftDrawer() {
               <ListItemButton
                 sx={{
                   minHeight: 48,
-                  justifyContent: 'space-between', // Align items on the left and right
+                  justifyContent: 'space-between', 
                   px: 2.5,
                 }}
               >
@@ -119,7 +118,7 @@ export default function LeftDrawer() {
                 <ListItemIcon
                   sx={{
                     minWidth: 0,
-                    justifyContent: 'flex-end', // Align icon to the right
+                    justifyContent: 'flex-end', 
                   }}
                 >
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -133,5 +132,3 @@ export default function LeftDrawer() {
     </Box>
   );
 }
-
-

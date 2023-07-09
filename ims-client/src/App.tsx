@@ -1,29 +1,40 @@
 
-import { Provider } from 'react-redux'
-import React from 'react'
 
+import { ThemeProvider } from '@emotion/react'
+import { Box } from '@mui/material'
 import './App.css'
 import LeftDrawer from './components/drawer/Drawer'
-import configureStore from './redux/configureStore'
-import Table from './components/Table/Table'
-import { ThemeProvider } from '@emotion/react'
 import theme from './theme'
 
-const store = configureStore()
+// const store = configureStore()
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Provider store={store}>
+//         <ThemeProvider theme={theme}>
+//         <LeftDrawer></LeftDrawer>
+//         </ThemeProvider>
+//       </Provider>
+//     </div>
+//   )
+// }
+
+// export default App
+
 
 function App() {
+
   return (
-    <div className="App">
-          <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-        <LeftDrawer></LeftDrawer>
-        </ThemeProvider>
-      </Provider>
-      </ThemeProvider>
-    </div>
-  )
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: 'flex' }}>
+        <LeftDrawer />
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          {/* <Here put all the components /> */}
+        </Box>
+      </Box>
+    </ThemeProvider>
+  );
 }
 
-export default App
-
+export default App;
