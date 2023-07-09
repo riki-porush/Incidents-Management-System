@@ -10,6 +10,7 @@ export const TabStyles: SxProps = {
     color: 'inherit',
     '&.Mui-selected': {
       color: 'white',
+      // backgroundColor: '#FFFFFF',
     },
     borderRadius: '5px 5px 0 0',
     borderBottom: '1px solid green',

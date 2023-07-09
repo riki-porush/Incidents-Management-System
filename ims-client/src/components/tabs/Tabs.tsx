@@ -5,46 +5,21 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { TabStyles } from './Tabs.style';
 import { GridColDef } from '@mui/x-data-grid';
-import incidentJson from '../../mockAPI/incident.json'
+import incidentJson from '../../mockAPI/incident.json';
+
 import { IIncident, IIncidents } from '../../pages/incidents/modules/inteface';
+
 export interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
   value: number;
 }
 
-const [rows, setRows] = useState<IIncidents>();
-
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await fetch('../../mockAPI/incident.json'); // Replace with the actual path to your JSON file
-      const incidentJson = await response.json();
-      console.log(incidentJson);
-      setRows(incidentJson);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
-
-  fetchData();
-}, []);
-
-
-const columns:GridColDef[] = [
-  { field: 'Eget Feugiat', headerName: 'EgetFeugiat', width: 200 },
-  { field: 'Nulla tincidunt', headerName: 'Name', width: 100 },
-  { field: 'Sit senectus', headerName: 'Email', width: 100 },
-  { field: 'Pharetra tortor', headerName: 'phoneNumber', width: 200 },
-  { field: 'tests', headerName: 'tests', width: 200 },
-  { field: 'experience', headerName: 'experience', width: 200 },
-];
-
 function CustomTabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
-  return (  
-  <div
+  return (
+    <div
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -68,7 +43,35 @@ function a11yProps(index: number) {
 }
 
 export default function UpTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState<number>(0);
+  const [rows, setRows] = useState<IIncidents | undefined>();
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch('../../mockAPI/incident.json');
+               console.log("]]kkkkkkkkm");
+
+        const incidentJson = await response.json();
+        console.log(incidentJson);
+        setRows(incidentJson);
+      }
+      catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const columns: GridColDef[] = [
+    { field: 'Eget Feugiat', headerName: 'EgetFeugiat', width: 200 },
+    { field: 'Nulla tincidunt', headerName: 'Name', width: 100 },
+    { field: 'Sit senectus', headerName: 'Email', width: 100 },
+    { field: 'Pharetra tortor', headerName: 'phoneNumber', width: 200 },
+    { field: 'tests', headerName: 'tests', width: 200 },
+    { field: 'experience', headerName: 'experience', width: 200 },
+  ];
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -104,11 +107,10 @@ export default function UpTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-
         Active Incidents table
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Solved Incidents table 
+        Solved Incidents table
       </CustomTabPanel>
     </Box>
   );
