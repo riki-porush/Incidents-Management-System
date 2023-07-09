@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 interface getAllProps {
     date: Date,
     setDate: React.Dispatch<React.SetStateAction<Date>>
-///f
+///hgfdsxcv
 }
 //כשאתן קוראות לקומפוננטה הזו תשלחו אליה אוביקט סטייט שמורכב מדייט ומסטדייט כנל
 export function DatePickerComp({ date, setDate }: getAllProps) {
