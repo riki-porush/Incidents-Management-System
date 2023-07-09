@@ -5,17 +5,17 @@ import mongoose from 'mongoose'
 import swaggerUI from 'swagger-ui-express'
 
 import fs from 'fs'
-import config from './config/config'
+import config from './config/config' 
 import incidentRout from './routes/IncidentRout'
 
-const swaggerFile: any = (process.cwd() + "/src/Swagger.json");
-const swaggerData: any = fs.readFileSync(swaggerFile, 'utf8');
-const swaggerDocument = JSON.parse(swaggerData);
+const swaggerFile: any = (process.cwd() + '/src/Swagger.json')
+const swaggerData: any = fs.readFileSync(swaggerFile, 'utf8')
+const swaggerDocument = JSON.parse(swaggerData)
 swaggerDocument.servers[0].url = `http://localhost:${config.server.port}`
 
 const app = express()
 
-app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/incident', incidentRout)
