@@ -3,6 +3,7 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
+          //the basic color
             light: '#2F854F1A', //light-green
             main: '#000000', //black
             dark: '#000000',
