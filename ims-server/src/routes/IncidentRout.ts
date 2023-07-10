@@ -7,6 +7,7 @@ const incidenceController = new IncidenceController()
 router.get('/', incidenceController.getAllIncidents)
 router.get('/:id', incidenceController.getIncidentById)
 router.post('/addIncident', incidenceController.addIncident)
-router.put('/updateIncidence/:id', incidenceController.updateIncidence)
+router.put('/updateIncidence/:id', incidenceController.updateIncident)
+
 
 export default router
