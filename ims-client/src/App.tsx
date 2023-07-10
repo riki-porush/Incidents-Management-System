@@ -9,9 +9,8 @@ import { ThemeProvider } from '@emotion/react'
 import theme from './theme'
 import { Box } from '@mui/material'
 import { CustomFooter } from './components/Table/Footer'
-import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import AutocompleteTag from './components/autoCompleteTag/autoCompleteTag'
-import { DatePickerComp } from './components/datePicker'
+import { DataGrid, GridToolbar } from '@mui/x-data-grid'
+
 
 // const store = configureStore()
 
@@ -31,12 +30,14 @@ import { DatePickerComp } from './components/datePicker'
 
 
 function App() {
+  
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
         <LeftDrawer />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           {/* <Here put all the components /> */}
+          
         </Box>
       </Box>
     </ThemeProvider>

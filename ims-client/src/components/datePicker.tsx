@@ -1,34 +1,30 @@
-
-import React from 'react'
-import DatePicker from 'react-datepicker'
-import "react-datepicker/dist/react-datepicker.css";
+import * as React from 'react';
+import dayjs, { Dayjs } from 'dayjs';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 interface getAllProps {
-    date: Date,
-    setDate: React.Dispatch<React.SetStateAction<Date>>
-///hgfdsxcv
+    value: dayjs.Dayjs | null,
+    setValue: React.Dispatch<React.SetStateAction<dayjs.Dayjs | null>>
+
 }
-//כשאתן קוראות לקומפוננטה הזו תשלחו אליה אוביקט סטייט שמורכב מדייט ומסטדייט כנל
-export function DatePickerComp({ date, setDate }: getAllProps) {
-    // החלטה שרירותית שיוכלו לעדכן על תאריך החל משנה שעברה ועד היום....אם נראה לכן שיש צורך לשנות אז יאללהה
-    const today = new Date()
-    //
-    const yearAgo = new Date()
-    yearAgo.setFullYear(today.getFullYear() - 1)
-    const selectDateHandler = (d: Date) => {
-        setDate(d)
-    }
-
+//m d y=the format
+export default function DateTimePickerValue({ value, setValue }: getAllProps) {
+    // const [value, setValue] = React.useState<Dayjs | null>(dayjs().set('year', dayjs().year()-1));
+    // console.log(value?.format())
+    const lastYear = dayjs().set('year', dayjs().year() - 1)
     return (
-
-        <DatePicker
-            dateFormat="yyyy/MM/dd"
-            selected={date}
-            onChange={selectDateHandler}
-            minDate={yearAgo}
-            maxDate={today}
-            todayButton={"Today"} />
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DemoContainer components={['DateTimePicker', 'DateTimePicker']}>
+                <DateTimePicker
+                    value={value}
+                    onChange={(newValue) => setValue(newValue)}
+                    disableFuture//אין אפשרות לבחור בתאריך שעדיין לא היה
+                    minDate={lastYear}
+                />
+            </DemoContainer>
+        </LocalizationProvider>
     );
 }
-
-
