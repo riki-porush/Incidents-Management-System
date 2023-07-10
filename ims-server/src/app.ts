@@ -4,9 +4,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import swaggerJSDoc from 'swagger-jsdoc'
 import swaggerUI from 'swagger-ui-express'
-import fs from 'fs'
 import config from './config/config' 
-
 import incidentRout from './routes/IncidentRout'
 import logger from './loggers/log'
 
