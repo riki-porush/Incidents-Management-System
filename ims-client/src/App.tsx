@@ -11,6 +11,7 @@ import { Box } from '@mui/material'
 import { CustomFooter } from './components/Table/Footer'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 
+
 // const store = configureStore()
 
 // function App() {
@@ -29,13 +30,14 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 
 
 function App() {
-
+  
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
         <LeftDrawer />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           {/* <Here put all the components /> */}
+          
         </Box>
       </Box>
     </ThemeProvider>
