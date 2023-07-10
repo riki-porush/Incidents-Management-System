@@ -1,18 +1,20 @@
 import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import { Avatar } from '@mui/material';
 import Typography from '@mui/material/Typography';
+import dayjs from 'dayjs';
 import React from 'react';
 
-import { ITimeLineEventprops } from './modules/interface';
+import Attachment from '../attachment';
+import { ITimeLineEventprops } from '../modules/interface';
 import { TimelineConnectorWrapper, TimelineDotWrapper, TimelineItemWrapper } from './timeLineEvent.style';
-import Attachment from './attachment';
 
 
 const timeLineEvent: React.FC<ITimeLineEventprops> = (props) => {
     const { timeline } = props
-    const { incidentId, profile, name, date, description, priority} = timeline
+    const { profile, name, description } = timeline
+    const date = dayjs(timeline.date).format("DD/MM/YYYY")
+
     return <div style={{ display: 'flex' }}>
         <TimelineItemWrapper>
             <TimelineSeparator>
@@ -22,18 +24,18 @@ const timeLineEvent: React.FC<ITimeLineEventprops> = (props) => {
                 <TimelineConnectorWrapper />
             </TimelineSeparator>
             <TimelineContent>
-                <Typography>
+                <Typography variant='bold'>
                     {name}
                 </Typography>
-                <Typography>
+                <Typography variant='date'>
                     {date.toString()}
                 </Typography>
-                <TimelineOppositeContent>
+                <Typography variant='longText'>
                     {description}
-                </TimelineOppositeContent>
+                </Typography>
             </TimelineContent>
         </TimelineItemWrapper>
-        <Attachment/>
+        <Attachment />
     </div>
 }
 

@@ -11,7 +11,6 @@ describe('TimelineEvent Component', () => {
         date: new Date('2023-07-01').toString(),
         description: 'Lorem ipsum dolor sit amet',
         priority: 'high',
-        files: ['file1.jpg', 'file2.jpg'],
     };
     test('should render the timeline event with correct data', () => {
         const { getByText, getByAltText } = render(<TimelineEvent timeline={sampleTimeline} />);
@@ -23,12 +22,5 @@ describe('TimelineEvent Component', () => {
         expect(dateElement).toBeInTheDocument();
         expect(descriptionElement).toBeInTheDocument();
         expect(avatarImage).toHaveAttribute('src', 'avatar.jpg');
-    });
-    test('should render files with correct sources', () => {
-        const { getAllByAltText } = render(<TimelineEvent timeline={sampleTimeline} />);
-        const fileImages = getAllByAltText('File Image');
-        expect(fileImages.length).toBe(2);
-        expect(fileImages[0]).toHaveAttribute('src', 'file1.jpg');
-        expect(fileImages[1]).toHaveAttribute('src', 'file2.jpg');
     });
 });

@@ -13,11 +13,7 @@ export const TimelineConnectorWrapper = styled(TimelineConnector)(({ theme }) =>
 export const TimelineItemWrapper = styled(TimelineItem)(({ theme }) => ({
     ' &': {
         flex: 1,
-        '&MuiTimelineItem-root::before': {
-            'display': 'none'
-        }
     },
-
 }))
 
 export const TimelineDotWrapper = styled(TimelineDot)`
@@ -25,7 +21,6 @@ export const TimelineDotWrapper = styled(TimelineDot)`
     border-width:1px;
     padding:0;
 `
-
 export const TimelineSeparatorWrapper = styled(TimelineSeparator)(({ theme }) => ({
     ' &': {
         flex: 1,
@@ -33,5 +28,4 @@ export const TimelineSeparatorWrapper = styled(TimelineSeparator)(({ theme }) =>
             'display': 'none'
         }
     },
-
 }))
