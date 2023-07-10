@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { IIncident } from "../interfaces/IncidentInterface";
+import { IIncident } from "../interfaces/IncidentInterface ";
 import { IncidentSchema } from "../models/IncidentModel";
 import { Request, Response } from 'express';
 
