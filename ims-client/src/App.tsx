@@ -12,23 +12,6 @@ import { CustomFooter } from './components/Table/Footer'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 
 
-// const store = configureStore()
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Provider store={store}>
-//         <ThemeProvider theme={theme}>
-//         <LeftDrawer></LeftDrawer>
-//         </ThemeProvider>
-//       </Provider>
-//     </div>
-//   )
-// }
-
-// export default App
-
-
 function App() {
   
   return (
