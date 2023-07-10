@@ -1,6 +1,6 @@
 import express from 'express'
 import IncidenceController from '../controllers/IncidentControler'
-import aggregateIncident from '../agrigations/incidentAggregation'
+import aggregateIncident from '../aggregations/incidentAggregation'
 
 const router = express.Router()
 const incidenceController = new IncidenceController()
