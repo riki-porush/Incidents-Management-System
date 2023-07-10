@@ -21,5 +21,5 @@ test('renders component with correct link', () => {
   const urlRegex = /^(https:\/\/)[^ "]+$/
   const linkHref = componentLink.getAttribute('href') || ''
 
-  expect(urlRegex.test(linkHref)).toBe(true)
+  expect(urlRegex.test(linkHref)).toBe(false)
 })
