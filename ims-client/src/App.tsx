@@ -10,7 +10,7 @@ import theme from './theme'
 import { Box } from '@mui/material'
 import { CustomFooter } from './components/Table/Footer'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import AutocompleteTag from './components/autoCompleteTag'
+import AutocompleteTag from './components/autoCompleteTag/autoCompleteTag'
 import { DatePickerComp } from './components/datePicker'
 
 // const store = configureStore()

@@ -1,6 +1,7 @@
 import React from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
+import theme from '../../theme';
 
 //const tagOptions = ['Tag1', 'Tag2', 'Tag3', 'Tag4'];
 
@@ -24,6 +25,7 @@ const AutocompleteTag = ({tagOptions}:getProps) => {
           placeholder="Write to add"
         />
       )}
+      
     />
   );
 };
