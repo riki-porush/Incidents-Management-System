@@ -29,9 +29,9 @@ import { DatePickerComp } from './components/datePicker'
 
 // export default App
 
-const tagOptions = [{id:"a" ,name:'Tag1'}, {id:"b" ,name:'Tag2'}, {id:"c" ,name:'Tag3'}, {id:"d" ,name:'Tag4'}];
+
 function App() {
-  const tagOptions = ['Tag1', 'Tag2', 'Tag3', 'Tag4'];
+  const tagOptions = [{id:"a" ,name:'Tag1'}, {id:"b" ,name:'Tag2'}, {id:"c" ,name:'Tag3'}, {id:"d" ,name:'Tag4'}];
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
