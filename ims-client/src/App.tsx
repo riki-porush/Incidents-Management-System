@@ -30,13 +30,14 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 
 
 function App() {
-
+  const tagOptions = [{id:"a" ,name:'Tag1'}, {id:"b" ,name:'Tag2'}, {id:"c" ,name:'Tag3'}, {id:"d" ,name:'Tag4'}];
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
         <LeftDrawer />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           {/* <Here put all the components /> */}
+          <AutocompleteTag tagOptions={tagOptions} ></AutocompleteTag>
         </Box>
       </Box>
     </ThemeProvider>
