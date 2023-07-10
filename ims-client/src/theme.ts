@@ -1,49 +1,45 @@
-import { colors } from '@mui/material'
-import { createTheme } from '@mui/material/styles'
-import React, { useContext } from 'react'
-const theme = createTheme({
+import { colors } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
 
+const theme = createTheme({
     palette: {
-      //לבן
         primary: {
            light: '#aa00ff',
-          main: '#FFFFFF',  //הצבע הראשי
-         dark: '#aa00ff',
-          contrastText: '#aa00ff',
-         
+           main: '#FFFFFF',  //הצבע הראשי
+           dark: '#aa00ff',
+           contrastText: '#aa00ff',
         },
-        //אפור
         secondary: {
-            light: '#aa00ff',
+            light: '#D9D9D9',
             main: '#D9D9D9',
-            dark: '#aa00ff',
+            dark: '#D9D9D9',
             contrastText: '#FFFFFF',
           },
           success: {
-            light: '#4caf50',
-            main: '#2e7d32',
-            dark: '#1b5e20',
+            light: '#4CAF50',
+            main: '#2E7D32',
+            dark: '#1B5E20',
             contrastText:'#fff'
           },
           error: {
-            light: '#ef5350',
-            dark: '#c62828',
-            main: '#d32f2f',
+            light: '#EF5350',
+            dark: '#C62828',
+            main: '#D32F2F',
             contrastText:'#fff'
           },
           warning:{
-            light: '#ff9800',
-            dark: '#e65100',
-            main: '#ed6c02',
+            light: '#FF9800',
+            dark: '#E65100',
+            main: '#ED6C02',
             contrastText:'#fff'
           },
           //???
-          info: {
-            light: '#aa00ff',
-            dark: '#aa00ff',
-            main: '#aa00ff',
-            contrastText:'#FFFFFF',
-          },
+          // info: {
+          //   light: '#AA00FF',
+          //   dark: '#AA00FF',
+          //   main: '#AA00FF',
+          //   contrastText:'#FFFFFF',
+          // },
         },
     typography: {
         fontFamily: 'Poppins',
@@ -59,9 +55,7 @@ const theme = createTheme({
               backgroundColor:'#2F854F',
               color:'#FFFFFF',//לבן
               border:'#FFFFFF',
-         
             }
-            
           }
         },
     }
