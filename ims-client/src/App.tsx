@@ -9,7 +9,7 @@ import { ThemeProvider } from '@emotion/react'
 import theme from './theme'
 import { Box } from '@mui/material'
 import { CustomFooter } from './components/Table/Footer'
-import { DataGrid, GridToolbar } from '@mui/x-data-grid'
+// import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 
 
 function App() {

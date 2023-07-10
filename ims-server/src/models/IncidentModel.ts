@@ -1,5 +1,5 @@
 import mongoose, {  Schema } from 'mongoose';
-import { IIncident } from '../interfaces/IncidentInterface ';
+import { IIncident } from '../interfaces/IncidentInterface';
 
 export const IncidentSchema = new Schema<IIncident>({
     id: {
@@ -30,14 +30,14 @@ export const IncidentSchema = new Schema<IIncident>({
         type: String,
         required: true,
     },
-    durationFault: {
+    durationHours: {
         type: String,
         required: true,
     },
-    caringTeam: {
+    slackLink: {
         type: String,
         required: true,
-    },
+    }
 });
 
 export default mongoose.model<IIncident>('Incident', IncidentSchema);
