@@ -53,6 +53,7 @@ function App() {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Button onClick={handleClick}>Open Incident</Button>
           {open && <AddIncident open={open} onClose={handleClose} />}
+
         </Box>
       </Box>
     </ThemeProvider>
