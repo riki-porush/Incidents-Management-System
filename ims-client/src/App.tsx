@@ -31,7 +31,7 @@ import { DatePickerComp } from './components/datePicker'
 
 
 function App() {
-  const tagOptions = ['Tag1', 'Tag2', 'Tag3', 'Tag4'];
+  const tagOptions = [{id:'1',name:'Tag1'}, {id:'2',name:'Tag2'}, {id:'3',name:'Tag3'},{id:'4',name: 'Tag4'}];
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
