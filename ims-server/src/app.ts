@@ -3,7 +3,6 @@ import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
 import swaggerUI from 'swagger-ui-express'
-
 import fs from 'fs'
 import config from './config/config' 
 import incidentRout from './routes/IncidentRout'
@@ -24,7 +23,7 @@ app.use('/incident', incidentRout)
 mongoose
   .connect(config.mongo.url)
   .then(() => {
-    logger.info('Connected to MongoDB.');
+    logger.info('Connected to mongoDB.')
     const port = config.server.port
     app.listen(port, () => {
       logger.info(`Server is listening on port ${port}`);
