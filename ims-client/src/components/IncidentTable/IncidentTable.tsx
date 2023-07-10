@@ -5,6 +5,12 @@ import { IIncident } from '../../pages/incidents/modules/inteface';
 import Table from '../Table/Table';
 import { GridColDef, GridRowsProp } from '@mui/x-data-grid';
 import { format } from 'date-fns';
+import UpTabs from '../tabs/Tabs';
+
+export type EventProps = {
+    onEvent: (functionName: string) => void;
+    setValue: (value: string) => void;
+};
 
 export interface IInceidentTableProps {
     rows: IIncident[],
@@ -44,7 +50,8 @@ const IncidentTable: React.FC<IInceidentTableProps> = ({ rows }) => {
 
     return (
         <div>
-            <Search onEvent={someFunction} setSearchValue={setSearchValue} />
+            <UpTabs onEvent={someFunction} setValue={setStatusValue}></UpTabs>
+            <Search onEvent={someFunction} setValue={setSearchValue} />
             <Table columns={columns} rows={filteredRows}></Table>
         </div>
     );

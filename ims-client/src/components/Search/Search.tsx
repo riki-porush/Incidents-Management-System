@@ -3,13 +3,11 @@ import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import Paper from '@mui/material/Paper';
 import * as React from 'react';
+import { EventProps } from '../IncidentTable/IncidentTable';
 
-type EventProps = {
-    onEvent: (functionName: string) => void;
-    setSearchValue: (value: string) => void;
-};
 
-const Search: React.FC<EventProps> = ({ onEvent, setSearchValue }) => {
+
+const Search: React.FC<EventProps> = ({ onEvent, setValue }) => {
     const handleClick = () => {
         onEvent('someFunction');
     };
@@ -22,7 +20,7 @@ const Search: React.FC<EventProps> = ({ onEvent, setSearchValue }) => {
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchValue(event.target.value);
+        setValue(event.target.value);
     };
 
     return (
