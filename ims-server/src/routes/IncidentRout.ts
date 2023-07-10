@@ -1,13 +1,12 @@
-import express from 'express'
-import IncidenceController from '../controllers/IncidentControler'
+import express from 'express';
+import IncidenceController from '../controllers/IncidentControler';
 
-const router = express.Router()
-const incidenceController = new IncidenceController()
+const router = express.Router();
+const incidenceController = new IncidenceController();
 
 router.get('/', incidenceController.getAllIncidents)
 router.get('/:id', incidenceController.getIncidentById)
 router.post('/addIncident', incidenceController.addIncident)
 router.put('/updateIncidence/:id', incidenceController.updateIncident)
 
-
-export default router
+export default router;
