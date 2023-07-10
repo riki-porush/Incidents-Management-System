@@ -1,51 +1,64 @@
-import mongoose, {  Schema } from 'mongoose';
-import { IIncident } from '../interfaces/IncidentInterface';
+import mongoose, { Schema } from 'mongoose'
+import { type IIncident } from '../interfaces/IncidentInterface'
 
 export const IncidentSchema = new Schema<IIncident>({
     id: {
         type: String,
         required: true,
-    },
-    name: {
+      },
+      name: {
         type: String,
         required: true,
-    },
-    status: {
+      },
+      status: {
         type: String,
         required: true,
-    },
-    description: {
+      },
+      description: {
         type: String,
         required: true,
-    },
-    priority: {
+      },
+      priority: {
         type: String,
         required: true,
-    },
-    date: {
+      },
+      type: {
+        type: String,
+        required: true,
+      },
+      durationHours: {
+        type: String,
+        required: true,
+      },
+      slackLink: {
+        type: String,
+        required: true,
+      },
+      tags: {
+        type: [
+          {
+            id: { type: String, required: true },
+            name: { type: String, required: true },
+          },
+        ],
+        required: true,
+      },
+      date: {
         type: Date,
         required: true,
-    },
-    type: {
-        type: String,
+      },
+      createdAt: {
+        type: Date,
         required: true,
-    },
-    durationHours: {
-        type: String,
+      },
+      updatedAt: {
+        type: Date,
         required: true,
-    },
-    slackLink: {
-        type: String,
+      },
+      cost: {
+        type: Number,
         required: true,
-    }
+      },
 });
 
-export default mongoose.model<IIncident>('Incident', IncidentSchema);
-
-
-
-
-
-
-
-
+export default mongoose.model<IIncident>('incidents', IncidentSchema);
