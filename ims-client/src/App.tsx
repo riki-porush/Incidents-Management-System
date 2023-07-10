@@ -10,7 +10,7 @@ import theme from './theme'
 import { Box } from '@mui/material'
 import { CustomFooter } from './components/Table/Footer'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import AutocompleteTag from './components/autoCompleteTag'
+import AutocompleteTag from './components/autoCompleteTag/autoCompleteTag'
 import { DatePickerComp } from './components/datePicker'
 
 // const store = configureStore()
@@ -29,17 +29,16 @@ import { DatePickerComp } from './components/datePicker'
 
 // export default App
 
-
+const tagOptions = [{id:"a" ,name:'Tag1'}, {id:"b" ,name:'Tag2'}, {id:"c" ,name:'Tag3'}, {id:"d" ,name:'Tag4'}];
 function App() {
-  const tagOptions = [{id:'1',name:'Tag1'}, {id:'2',name:'Tag2'}, {id:'3',name:'Tag3'},{id:'4',name: 'Tag4'}];
+  const tagOptions = ['Tag1', 'Tag2', 'Tag3', 'Tag4'];
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
         <LeftDrawer />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           {/* <Here put all the components /> */}
-          <AutocompleteTag tagOptions={tagOptions}></AutocompleteTag>
-          {/* <DatePickerComp date={new Date()} setDate={}></DatePickerComp> */}
+          <AutocompleteTag tagOptions={tagOptions} ></AutocompleteTag>
         </Box>
       </Box>
     </ThemeProvider>
