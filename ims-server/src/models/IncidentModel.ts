@@ -61,12 +61,4 @@ export const IncidentSchema = new Schema<IIncident>({
       },
 });
 
-export default mongoose.model<IIncident>('Incident', IncidentSchema);
-
-
-
-
-
-
-
-
+export default mongoose.model<IIncident>('incidents', IncidentSchema);
