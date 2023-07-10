@@ -1,18 +1,26 @@
+import { IIncident } from "../pages/incidents/modules/inteface"
 
-export function filterRowsBySearch<T>(array: T[], filterString: string): T[] {
+export function filterRowsBySearch(array: IIncident[], filterString: string): IIncident[] {
+ 
     return array.filter((item) => {
-      for (const key in item) {
-        if (String(item[key]).includes(filterString)) {
-          return true;
-        }
-      }
-      return false;
+        for (const key in item) {
+            if ((key!='date')&&(String(item[key as keyof IIncident]).toLowerCase()).includes(filterString.toLowerCase())) {
+                console.log(key)
+                return true;
+            }
+        }        
+        return false;
     });
-  }
-  
-  export function IncidentTableService() {  
+}
+
+export function filterRowsByStatus(array: IIncident[], status: string): IIncident[] {
+    return array.filter((item) => item.status === status);
+}
+
+export function IncidentTableService() {
     return {
-      filterRowsBySearch,
-      // Other service methods...
+        filterRowsBySearch,
+        filterRowsByStatus,
+        // Other service methods...
     };
-  }
+}
