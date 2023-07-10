@@ -1,11 +1,15 @@
-export interface IIncident extends Document {
-  id: string;
+export interface IIncident {
+  _id: string;
   name: string;
   status: string;
   description: string;
   priority: string;
-  date: Date;
   type: string;
-  durationFault: string;
-  caringTeam: string;
+  durationHours: string;
+  slackLink: string;
+  tags: { id: string, name: string }[];
+  date: Date;
+  createdAt: Date;
+  updatedAt: Date;
+  cost: number;
 }

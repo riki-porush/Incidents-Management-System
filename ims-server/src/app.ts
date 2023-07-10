@@ -30,10 +30,10 @@ const swaggerOptions: swaggerJSDoc.Options = {
   apis: ['./routes/*.ts', './controllers/*.ts'],
 };
 
-// const swaggerSpecs = swaggerJSDoc(swaggerOptions);
+const swaggerSpecs = swaggerJSDoc(swaggerOptions);
 const app = express()
 
-// app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
+app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/incident', incidentRout)
