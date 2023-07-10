@@ -39,4 +39,5 @@ export default class IncidenceController {
       return res.status(404).json({ message: error })
     }
   }
+
 }
