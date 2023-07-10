@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux'
-import React from 'react'
+import React, { useState } from 'react'
 
 import './App.css'
 import LeftDrawer from './components/drawer/Drawer'
@@ -10,6 +10,8 @@ import theme from './theme'
 import { Box } from '@mui/material'
 import { CustomFooter } from './components/Table/Footer'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import AutocompleteTag from './components/autoCompleteTag/autoCompleteTag'
+import { DatePickerComp } from './components/datePicker'
 
 // const store = configureStore()
 
@@ -29,7 +31,6 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 
 
 function App() {
-
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
