@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose'
 import { type IIncident } from '../interfaces/IncidentInterface'
 
 export const IncidentSchema = new Schema<IIncident>({
-    _id: {
+    id: {
         type: String,
         required: true,
       },
