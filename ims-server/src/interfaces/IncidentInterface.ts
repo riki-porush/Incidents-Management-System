@@ -5,7 +5,7 @@ export interface IIncident {
     description: string;
     priority: string;
     type: string;
-    durationHours: string;
+    durationHours: number;
     slackLink: string;
     tags: { id: string, name: string }[];
     date: Date;

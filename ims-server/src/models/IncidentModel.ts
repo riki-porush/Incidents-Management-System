@@ -18,7 +18,7 @@ export const IncidentSchema = new Schema<IIncident>({
         type: String,
         required: true,
       },
-      priority: {
+      priority: { 
         type: String,
         required: true,
       },
@@ -27,7 +27,7 @@ export const IncidentSchema = new Schema<IIncident>({
         required: true,
       },
       durationHours: {
-        type: String,
+        type: Number,
         required: true,
       },
       slackLink: {
