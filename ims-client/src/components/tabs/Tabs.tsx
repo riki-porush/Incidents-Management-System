@@ -1,79 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { TabStyles } from './Tabs.style';
-import { GridColDef } from '@mui/x-data-grid';
-import incidentJson from '../../mockAPI/incident.json';
+import theme from '../../theme';
+import CustomTabPanel from './CustomTabPanel';
 
-import { IIncident, IIncidents } from '../../pages/incidents/modules/inteface';
 
-export interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
+// קומפוננטת האירוע
+type EventProps = {
+  onEvent: (functionName: string,status:string) => void;
+};
 
-function CustomTabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 2 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-export default function UpTabs() {
+const UpTabs:React.FC<EventProps>=({onEvent}) =>{
   const [value, setValue] = useState<number>(0);
-  const [rows, setRows] = useState<IIncidents | undefined>();
 
-  useEffect(() => {
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch('../../mockAPI/incident.json');
-               console.log("]]kkkkkkkkm");
-
-        const incidentJson = await response.json();
-        console.log(incidentJson);
-        setRows(incidentJson);
-      }
-      catch (error) {
-        console.error('Error:', error);
-      }
+  function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      'aria-controls': `simple-tabpanel-${index}`,
     };
-    fetchData();
-  }, []);
-
-  const columns: GridColDef[] = [
-    { field: 'Eget Feugiat', headerName: 'EgetFeugiat', width: 200 },
-    { field: 'Nulla tincidunt', headerName: 'Name', width: 100 },
-    { field: 'Sit senectus', headerName: 'Email', width: 100 },
-    { field: 'Pharetra tortor', headerName: 'phoneNumber', width: 200 },
-    { field: 'tests', headerName: 'tests', width: 200 },
-    { field: 'experience', headerName: 'experience', width: 200 },
-  ];
+  }
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    if(newValue==0){
+      //שליחת event לקומפוננטה טבלה עם הערך active
+      onEvent('filterRowsByStatus','active');
+    }
+    if(newValue==1){
+      //שליחת event לקומפוננטה טבלה עם הערך resolved
+      onEvent('filterRowsByStatus','resolved');
+    }
     setValue(newValue);
   };
 
@@ -90,7 +48,7 @@ export default function UpTabs() {
             label="Active Incidents"
             {...a11yProps(0)}
             sx={{
-              backgroundColor: value === 0 ? 'green' : 'white',
+              backgroundColor: value === 0 ? theme.palette.secondary.main : theme.palette.secondary.contrastText,
               borderRadius: '5px',
               border: '1px solid green',
             }}
@@ -99,7 +57,7 @@ export default function UpTabs() {
             label="Solved Incidents"
             {...a11yProps(1)}
             sx={{
-              backgroundColor: value === 1 ? 'green' : 'white',
+              backgroundColor: value === 1 ?  theme.palette.secondary.main: theme.palette.secondary.contrastText,
               borderRadius: '5px',
               border: '1px solid green',
             }}
@@ -115,3 +73,5 @@ export default function UpTabs() {
     </Box>
   );
 }
+
+export default UpTabs;
