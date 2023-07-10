@@ -1,3 +1,4 @@
+
 import { IIncident } from "../pages/incidents/modules/inteface"
 
 export function filterRowsBySearch(array: IIncident[], filterString: string): IIncident[] {
