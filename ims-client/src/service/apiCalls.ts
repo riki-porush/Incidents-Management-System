@@ -1,10 +1,8 @@
 import axios from "axios"
 
-axios.defaults.baseURL = process.env.REACT_APP_API_KEY
-
 const apiCalls = {
     //להוסיף את כל הקריאות שרת
-    getIncidents: () => axios.get(`/incident`).then(response => response.data)
+    getIncidents: () => axios.get(`http://localhost:5000/incident`).then(response => response.data),
 }
 
 export default apiCalls
