@@ -15,7 +15,7 @@ export default async function aggregateIncident(req: Request, res: Response): Pr
                         $sum: { $cond: [{ $eq: ['$status', 'Active'] }, 1, 0] },
                     },
                     averageCost: { $avg: '$cost' },
-                    averageTimeTaken: { $avg: '$durationHours'},
+                    averageDurationHours: { $avg: '$durationHours'},
                 },
             },
         ]).exec();
@@ -25,7 +25,7 @@ export default async function aggregateIncident(req: Request, res: Response): Pr
             return res.status(200).json({
                 activeCount: 0,
                 averageCost: 0,
-                averageTimeTaken: 0,
+                averageDurationHours: 0,
             })
         } 
     } catch (error) {
