@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 // DECLARE ALL VARIABLES
-const SERVER_PORT = 7000
+const SERVER_PORT = 7002
 const MONGO_URL_LOCAL = 'mongodb+srv://fiverrkamatech:DBpassword23@clusterims.htyanst.mongodb.net/imsdb'
 
 // CREATE CONFIG OBJECT
