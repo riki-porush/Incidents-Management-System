@@ -37,3 +37,5 @@ mongoose
   .catch((error) => {
     logger.error('Unable to connect to MongoDB.', error);
   })
+
+  export default app
