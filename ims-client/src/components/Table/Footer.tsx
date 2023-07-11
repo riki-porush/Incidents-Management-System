@@ -4,11 +4,12 @@ import CustomTextField from "../CustomTextField/CustomTextfield";
 import { useState } from "react";
 import { PAGE_SIZE } from "./Table";
 import React from 'react';
+import theme from "../../theme";
 
 export const CustomFooter = (): JSX.Element => {
 
     const gridApi = useGridApiContext();
-    const [rowCount, setRowCount] = useState(gridApi.current?.getRowsCount() || 0);
+    const [rowCount, setRowCount] = useState(PAGE_SIZE);
 
     const handleRowCountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newRowCount = parseInt(event.target.value, 10);
@@ -24,9 +25,9 @@ export const CustomFooter = (): JSX.Element => {
             <div style={{ flexGrow: 1, textAlign: 'right' }} >
                 show:
             </div>
-            <CustomTextField
+            <CustomTextField theme={theme}
                 type="number"
-                value={PAGE_SIZE}
+                value={rowCount}
                 onChange={handleRowCountChange}
             />
         </GridFooterContainer>
