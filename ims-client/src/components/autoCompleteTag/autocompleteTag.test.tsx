@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import AutocompleteTag from './autoCompleteTag';
@@ -42,6 +42,4 @@ test('AutocompleteTag renders correctly and handles tag selection and removal', 
   const removedTag = queryByText('Tag1');
   expect(removedTag).not.toBeInTheDocument();
 });
-=======
-import {} from 'react';
->>>>>>> c49e546c84a50ed2ec24c0a1d83d9253ab951249
+
