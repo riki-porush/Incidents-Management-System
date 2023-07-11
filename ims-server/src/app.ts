@@ -29,3 +29,4 @@ app.listen(port, () => {
   logger.info(`Server is listeningo on http://localhost:${port}`)
 });
 
+export default app
