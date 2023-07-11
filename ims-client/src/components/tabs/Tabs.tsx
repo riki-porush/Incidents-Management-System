@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -7,11 +7,6 @@ import theme from '../../theme';
 import CustomTabPanel from './CustomTabPanel';
 import { EventProps } from '../IncidentTable/IncidentTable';
 
-
-// // קומפוננטת האירוע
-// type EventProps = {
-//   onEvent: () => void;
-// };
 
 const UpTabs: React.FC<EventProps> = ({ onEvent, setValue }) => {
   const [status, setStatus] = useState<number>(0);
@@ -27,14 +22,9 @@ const UpTabs: React.FC<EventProps> = ({ onEvent, setValue }) => {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     if (newValue == 0) {
       setValue('Active');
-      //שליחת event לקומפוננטה טבלה עם הערך active
-      // onEvent('filterRowsByStatus');
       onEvent('someFunction');
-
     }
     if (newValue == 1) {
-      //שליחת event לקומפוננטה טבלה עם הערך resolved
-      // onEvent('filterRowsByStatus','resolved');
       setValue('Resolved');
       onEvent('someFunction');
     }
@@ -54,7 +44,6 @@ const UpTabs: React.FC<EventProps> = ({ onEvent, setValue }) => {
             label="Active Incidents"
             {...a11yProps(0)}
             sx={{
-              // backgroundColor: value === 0 ? theme.palette.secondary.main : theme.palette.secondary.contrastText,
               backgroundColor: status === 0 ? theme.palette.secondary.main : theme.palette.secondary.contrastText,
               borderRadius: '5px',
               border: '1px solid green',
