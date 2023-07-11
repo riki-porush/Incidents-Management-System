@@ -8,7 +8,7 @@ describe('TimelineEvent Component', () => {
         incidentId: '1',
         profile: 'avatar.jpg',
         name: 'John Doe',
-        date: new Date('2023-07-01').toString(),
+        createdDate: new Date('2023-07-01').toString(),
         description: 'Lorem ipsum dolor sit amet',
         priority: 'high',
     };

@@ -13,7 +13,7 @@ import { TimelineConnectorWrapper, TimelineDotWrapper, TimelineItemWrapper } fro
 const timeLineEvent: React.FC<ITimeLineEventprops> = (props) => {
     const { timeline } = props
     const { profile, name, description } = timeline
-    const date = dayjs(timeline.date).format("DD/MM/YYYY")
+    const date = dayjs(timeline.createdDate).format("DD/MM/YYYY")
 
     return <div style={{ display: 'flex' }}>
         <TimelineItemWrapper>

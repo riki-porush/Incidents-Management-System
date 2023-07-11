@@ -1,7 +1,7 @@
 import { Timeline } from '@mui/lab';
 import React from 'react'
 
-import data from '../../mockAPI/timeLine.json'
+import data from '../../mockAPI/timeLineEvent.json'
 import TimeLineEvent from './timeLineEvent/timeLineEvent'
 
 const TimeLine = () => {

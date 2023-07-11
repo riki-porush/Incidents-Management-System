@@ -3,11 +3,10 @@ export interface ITimeLineEventprops {
 }
 
 export interface timeline {
-    id:string
     incidentId: string
     profile?: string
     name?: string
-    date: string
+    createdDate: string
     description: string
     priority: string
 }
