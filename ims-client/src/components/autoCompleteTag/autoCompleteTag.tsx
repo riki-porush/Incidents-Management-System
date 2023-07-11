@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
+
 interface Tag{
   id: string;
   name: string;
 }
+
 interface AutocompleteTagProps{
   tagOptions: Tag[];
 }
+
 const AutocompleteTag = ({ tagOptions }: AutocompleteTagProps) => {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
   return (
@@ -44,3 +47,6 @@ const AutocompleteTag = ({ tagOptions }: AutocompleteTagProps) => {
   );
 };
 export default AutocompleteTag;
+
+
+
