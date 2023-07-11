@@ -1,18 +1,14 @@
-import { Provider } from 'react-redux'
-import React from 'react'
 
+import { ThemeProvider } from '@emotion/react'
+import { Box } from '@mui/material'
 import './App.css'
 import LeftDrawer from './components/drawer/Drawer'
-import configureStore from './redux/configureStore'
-import Table from './components/Table/Table'
-import { ThemeProvider } from '@emotion/react'
 import theme from './theme'
-import { Box } from '@mui/material'
-import { CustomFooter } from './components/Table/Footer'
-import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import React from 'react'
 
 import TimeLine from './pages/timeLine/timeLine'
 import DemoComponent from './demoTest/DemoComponent'
+
 
 
 // const store = configureStore()
@@ -34,7 +30,9 @@ import DemoComponent from './demoTest/DemoComponent'
 
 
 function App() {
+ 
  // const tagOptions = [{id:"a" ,name:'Tag1'}, {id:"b" ,name:'Tag2'}, {id:"c" ,name:'Tag3'}, {id:"d" ,name:'Tag4'}];
+ 
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>

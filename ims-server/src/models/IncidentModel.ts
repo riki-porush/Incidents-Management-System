@@ -18,7 +18,7 @@ export const IncidentSchema = new Schema<IIncident>({
         type: String,
         required: true,
       },
-      priority: {
+      priority: { 
         type: String,
         required: true,
       },
