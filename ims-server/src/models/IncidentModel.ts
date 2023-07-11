@@ -27,7 +27,7 @@ export const IncidentSchema = new Schema<IIncident>({
         required: true,
       },
       durationHours: {
-        type: String,
+        type: Number,
         required: true,
       },
       slackLink: {
