@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { ThemeProvider } from '@emotion/react'
 import { Box } from '@mui/material'
 import './App.css'
-import LeftDrawer, { IIcon}  from './components/drawer/Drawer'
+import LeftDrawer, { IIcon } from './components/drawer/Drawer'
 import theme from './theme'
 import React from 'react'
 import { BiHome, BiHomeHeart, BiMessageAdd } from 'react-icons/bi';
@@ -33,6 +33,7 @@ import DemoComponent from './demoTest/DemoComponent'
 // import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 
 function App() {
+
   const tagOptions = [{ id: "a", name: 'Tag1' }, { id: "b", name: 'Tag2' }, { id: "c", name: 'Tag3' }, { id: "d", name: 'Tag4' }];
   const drawerIcons: IIcon[] = [
     { icon: BiHomeHeart, text: "home", navigation: "./home" },
@@ -41,6 +42,7 @@ function App() {
     { icon: BiMessageAdd, text: "settings", navigation: "./message" },
 
   ];
+
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
@@ -48,9 +50,7 @@ function App() {
         <TimeLine />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           {/* <Here put all the components /> */}
-
           {/* <AutocompleteTag tagOptions={tagOptions} ></AutocompleteTag> */}
-
         </Box>
       </Box>
     </ThemeProvider>

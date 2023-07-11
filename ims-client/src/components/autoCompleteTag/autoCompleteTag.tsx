@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
-interface Tag {
+interface Tag{
   id: string;
   name: string;
 }
 
-interface AutocompleteTagProps<T extends Tag> {
-  tagOptions: T[];
+interface AutocompleteTagProps{
+  tagOptions: Tag[];
 }
 
-const AutocompleteTag = <T extends Tag>({ tagOptions }: AutocompleteTagProps<T>) => {
-  const [selectedTags, setSelectedTags] = useState<T[]>([]);
+const AutocompleteTag = ({ tagOptions }: AutocompleteTagProps) => {
+  const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
   return (
     <Autocomplete
       ChipProps={{
@@ -42,8 +42,11 @@ const AutocompleteTag = <T extends Tag>({ tagOptions }: AutocompleteTagProps<T>)
           placeholder="Write to add"
         />
       )}
+      sx={{border:"1px solid #E1E1E1",borderRadius:"10px",background:"#FFF",width: "569px"}}
     />
   );
 };
-
 export default AutocompleteTag;
+
+
+

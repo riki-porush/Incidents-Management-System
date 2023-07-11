@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import AutocompleteTag from './autoCompleteTag';
@@ -12,7 +11,7 @@ const mockTagOptions = [
 
 test('AutocompleteTag renders correctly and handles tag selection and removal', () => {
   // Render the component
-  const { getByPlaceholderText, getByText, queryByText } = render(
+  const { getByPlaceholderText, getByText, queryByTestId } = render(
     <AutocompleteTag tagOptions={mockTagOptions} />
   );
 
@@ -35,11 +34,19 @@ test('AutocompleteTag renders correctly and handles tag selection and removal', 
   const secondSelectedTag = getByText('Tag2');
   expect(secondSelectedTag).toBeInTheDocument();
 
-  // Simulate removing a tag
-  fireEvent.click(getByText('Tag1'));
+  // Simulate removing a selected tag
+  fireEvent.click(selectedTag);
 
-  // Check if the removed tag is no longer displayed
-  const removedTag = queryByText('Tag1');
-  expect(removedTag).not.toBeInTheDocument();
+  // Check if the selected tag is removed from the list of options
+  const removedTagOption = queryByTestId('option-Tag1');
+  expect(removedTagOption).toBeNull();
+
+  // Simulate removing the second selected tag
+  fireEvent.click(secondSelectedTag);
+
+  // Check if the second selected tag is removed from the list of options
+  const removedSecondTagOption = queryByTestId('option-Tag2');
+  expect(removedSecondTagOption).toBeNull();
+
 });
 
