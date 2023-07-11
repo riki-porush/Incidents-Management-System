@@ -11,7 +11,11 @@ import { Box } from '@mui/material'
 import { CustomFooter } from './components/Table/Footer'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import AutocompleteTag from './components/autoCompleteTag/autoCompleteTag'
+<<<<<<< HEAD
 
+=======
+//import { DatePickerComp } from './components/datePicker'
+>>>>>>> c49e546c84a50ed2ec24c0a1d83d9253ab951249
 import DemoComponent from './demoTest/DemoComponent'
 
 // const store = configureStore()
@@ -40,8 +44,8 @@ function App() {
         <LeftDrawer />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           {/* <Here put all the components /> */}
-          {/* <AutocompleteTag tagOptions={tagOptions} ></AutocompleteTag> */}
-          <DemoComponent name='mike'></DemoComponent>
+           <AutocompleteTag tagOptions={tagOptions} ></AutocompleteTag>  
+          
         </Box>
       </Box>
     </ThemeProvider>
