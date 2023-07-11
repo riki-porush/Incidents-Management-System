@@ -3,8 +3,7 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
-          //the basic color
-            light: '#2F854F1A', //light-green
+            light: '#343434', 
             main: '#000000', //black
             dark: '#000000',
             contrastText: '#FFFFFF',
@@ -12,7 +11,7 @@ const theme = createTheme({
         secondary: {
             light: '#2F854F1A', //light-green
             main: '#2F854F', //green
-            dark: '#D9D9D9',
+            dark: '#205D37',
             contrastText: '#FFFFFF',
         },
         success: {
@@ -35,14 +34,21 @@ const theme = createTheme({
         },
         info: {
             light: '#D9D9D9',
-            dark: '#D9D9D9',
+            dark: '#979797',
             main: '#D9D9D9', //gray
             contrastText:'#FFFFFF',
         },
+        text:{
+          primary:'#000000'
+       
+        }
       },
       typography: {
           fontFamily: 'Poppins',
           fontSize: 15,
+          
+          // fontWeight: 500,
+          // lineHeight: 22.5
       },
       components: {
           MuiButton: {
@@ -51,6 +57,7 @@ const theme = createTheme({
                 backgroundColor:'#2F854F',
                 color:'#FFFFFF', //white
                 border:'#FFFFFF',
+                
               }
             }
           },
