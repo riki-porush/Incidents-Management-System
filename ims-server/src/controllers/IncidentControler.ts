@@ -1,10 +1,7 @@
 
-import pino from 'pino';
-import IncidentModel from '../models/IncidentModel';
-import IncidentSchema from '../models/IncidentModel';
 import { Request, Response } from 'express';
 import logger from '../loggers/log';
-import { IIncident } from '../interfaces/IncidentInterface';
+import IncidentSchema from '../models/IncidentModel';
 import validate from './incidentValidation';
 
 
