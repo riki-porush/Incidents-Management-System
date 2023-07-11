@@ -4,10 +4,11 @@ import express from 'express'
 import fs from 'fs'
 import mongoose from 'mongoose'
 import swaggerUI from 'swagger-ui-express'
-
 import config from './config/config'
 import logger from './loggers/log'
 import incidentRout from './routes/IncidentRout'
+import aggrigationRouter from './routes/aggrigationRouter'
+
 
 
 const swaggerFile: any = (process.cwd() + "/src/Swagger.json");
@@ -21,6 +22,8 @@ app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/incident', incidentRout)
+app.use('/aggrigation',aggrigationRouter)
+
 
 mongoose
   .connect(config.mongo.url)
