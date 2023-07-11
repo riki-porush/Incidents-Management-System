@@ -4,7 +4,7 @@ dotenv.config()
 
 // DECLARE ALL VARIABLES
 const SERVER_PORT = 7000
-const MONGO_URL_LOCAL = 'mongodb+srv://fiverrkamatech:DBpassword23@clusterims.htyanst.mongodb.net/MockAPIMSI'
+const MONGO_URL_LOCAL = 'mongodb+srv://fiverrkamatech:DBpassword23@clusterims.htyanst.mongodb.net/imsdb'
 
 // CREATE CONFIG OBJECT
 const config = {
