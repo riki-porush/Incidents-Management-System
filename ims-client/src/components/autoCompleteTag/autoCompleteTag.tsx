@@ -3,25 +3,31 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
 interface Tag {
-  id: string,
-  name: string
+  id: string;
+  name: string;
 }
-interface getProps {
-  tagOptions: Tag[]
+
+interface AutocompleteTagProps<T extends Tag> {
+  tagOptions: T[];
 }
-const AutocompleteTag = ({ tagOptions }: getProps) => {
-  const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
-  const handleRemoveTag = (tag: string) => {
-    setSelectedTags((prevTags) => prevTags.filter((t) => t.id !== tag));
-  };
+
+const AutocompleteTag = <T extends Tag>({ tagOptions }: AutocompleteTagProps<T>) => {
+  const [selectedTags, setSelectedTags] = useState<T[]>([]);
   return (
-    <Autocomplete ChipProps={{
-      clickable: true, sx: {
-        border: "1px solid #2F854F", color: " #2F854F",
-        backgroundColor: "rgba(47, 133, 79, 0.10)", fontFamily: "Poppins", fontSize: "15px", fontStyle: "normal",
-        fontWeight: "100", lineHeight: "normal", href: "#basic-chip"
-      }
-    }}
+    <Autocomplete
+      ChipProps={{
+        clickable: true,
+        sx: {
+          border: '1px solid #2F854F',
+          color: '#2F854F',
+          backgroundColor: 'rgba(47, 133, 79, 0.10)',
+          fontFamily: 'Poppins',
+          fontSize: '15px',
+          fontStyle: 'normal',
+          fontWeight: '100',
+          lineHeight: 'normal',
+        },
+      }}
       multiple
       options={tagOptions}
       filterSelectedOptions
