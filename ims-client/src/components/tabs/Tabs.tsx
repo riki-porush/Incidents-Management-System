@@ -71,12 +71,6 @@ const UpTabs: React.FC<EventProps> = ({ onEvent, setValue }) => {
           />
         </Tabs>
       </Box>
-      <CustomTabPanel value={status} index={0}>
-        Active Incidents table
-      </CustomTabPanel>
-      <CustomTabPanel value={status} index={1}>
-        Solved Incidents table
-      </CustomTabPanel>
     </Box>
   );
 }
