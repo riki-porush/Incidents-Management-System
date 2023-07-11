@@ -1,6 +1,5 @@
-import { IIncident } from "../interfaces/IncidentInterface ";
+import { IIncident } from "../interfaces/IncidentInterface";
 
-  
   export default function validate(model:IIncident){
     const errors = [];
 

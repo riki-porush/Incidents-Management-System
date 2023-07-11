@@ -7,26 +7,20 @@ import logger from '../loggers/log';
 import { IIncident } from '../interfaces/IncidentInterface';
 import validate from './incidentValidation';
 
-
 export default class IncidentController {
   
   public async addIncident(req: Request, res: Response) {
     try {
       const incident = req.body;
-
-      logger.info('Adding incident:', incident); // Logging the incident being added
-
+      logger.info('Adding incident:', incident); 
       const incidentController = new IncidentController();
-
       await validate(incident);
       const createdIncident = await IncidentSchema.create(incident);
-
-      logger.info('Incident created:', createdIncident); // Logging the created incident
-
+      logger.info('Incident created:', createdIncident); 
       return res.status(200).json(createdIncident);
     }
      catch (error:any) {
-      logger.error('Error adding incident:', error.message); // Logging the error message
+      logger.error('Error adding incident:', error.message); 
       return res.status(404).json({ message: error.message });
     }
   }
