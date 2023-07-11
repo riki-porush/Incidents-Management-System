@@ -1,3 +1,4 @@
+import { Request, Response } from 'express';
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import express from 'express'
@@ -22,6 +23,9 @@ connect()
 app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use(cors())
 app.use(bodyParser.json())
+app.get('/', (req: Request, res: Response): void => {
+  res.send('IMS');
+});
 app.use('/incident', incidentRout)
 app.use('/aggrigation',aggrigationRouter)
 
