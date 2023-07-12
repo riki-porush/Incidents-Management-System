@@ -3,12 +3,12 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import apiCalls from '../../service/apiCalls';
-import { IAggregation } from '../../pages/incidents/modules/inteface';
+import IAggregation  from '../../interface/aggregationInterface';
 import Widget from './Widget';
 
 const NewStack = styled(Stack)(({ theme }) => ({
   '&':{
-    'width': '1,433px',
+    'width': '1433px',
     'height': '170px',
     'top': '123px',
     'left': '122px',

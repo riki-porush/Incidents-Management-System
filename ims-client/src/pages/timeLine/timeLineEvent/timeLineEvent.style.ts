@@ -21,11 +21,3 @@ export const TimelineDotWrapper = styled(TimelineDot)`
     border-width:1px;
     padding:0;
 `
-export const TimelineSeparatorWrapper = styled(TimelineSeparator)(({ theme }) => ({
-    ' &': {
-        flex: 1,
-        '&MuiTimelineSeparator-root::before': {
-            'display': 'none'
-        }
-    },
-}))

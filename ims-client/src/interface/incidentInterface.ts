@@ -1,4 +1,6 @@
+
 export default interface IIncident  {
+
 
     id: string;
     name: string;
