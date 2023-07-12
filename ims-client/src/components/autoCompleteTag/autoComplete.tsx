@@ -3,9 +3,11 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Option from '../../interface/IOption';
 import theme from '../../theme';
+
 interface AutocompleteProps {
   options: Option[];
 }
+
 const CustomAutocomplete =({ options }: AutocompleteProps) => {
   const [selectedOptions, setSelectedOptions] = useState<Option []>([]);
   return (
@@ -42,7 +44,3 @@ const CustomAutocomplete =({ options }: AutocompleteProps) => {
   );
 };
 export default CustomAutocomplete;
-
-
-
-

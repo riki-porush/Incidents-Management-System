@@ -2,12 +2,15 @@
 import { ThemeProvider } from '@emotion/react'
 import { Box } from '@mui/material'
 import './App.css'
-import LeftDrawer from './components/drawer/Drawer'
+import LeftDrawer, { IIcon } from './components/drawer/Drawer'
 import theme from './theme'
 import React from 'react'
 
 import TimeLine from './pages/timeLine/timeLine'
 import DemoComponent from './demoTest/DemoComponent'
+import WidgetsStack from './components/Widget/WidgetsStack'
+import Widget from './components/Widget/Widget'
+import IncidentsPage from './pages/incidents/incident'
 
 
 
@@ -28,17 +31,24 @@ import DemoComponent from './demoTest/DemoComponent'
 // export default App
 // import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 
-
 function App() {
- 
 
- 
+  const drawerIcons: IIcon[] = [
+    { icon: BiHomeHeart, text: "home", navigation: "./home" },
+    { icon: BiHome, text: "dashboard", navigation: "./dashboard" },
+    { icon: AiOutlineSetting, text: "settings", navigation: "./settings" },
+    { icon: BiMessageAdd, text: "settings", navigation: "./message" },
+
+  ];
+
+
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
-        <LeftDrawer />
-        <TimeLine/>
+        <LeftDrawer icons={drawerIcons} />
+        
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+              <IncidentsPage/>
           {/* <Here put all the components /> */}
         </Box>
       </Box>

@@ -1,5 +1,7 @@
+import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react'
 import DemoComponent from './DemoComponent'
+
 
 const name = 'John'
 //verifies  with the correct name and checks if the expected text is present in the rendered component.
