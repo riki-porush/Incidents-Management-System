@@ -45,17 +45,17 @@ export default class IncidentController {
     }
   }
 
-  public async getIncidentById(req: Request, res: Response) {
+  public async getIncidentById(req: Request, res: Response) {    
     try {
       const incident = await IncidentSchema.findById(req.params.id);
-
-      if (incident) {
-        logger.info('get incident by id', incident);
+      if (incident)
+      {
+        logger.info('get incident by id',incident);
         return res.status(200).json(incident);
       }
       return res.status(404).json({ message: "Incident not found" });
-    } catch (error: any) {
-      logger.error('Error getting incident by ID:', error.message); 
+    } catch (error:any) {
+      logger.error({ source: constants.FROM_DATA_PATH, err: constants.INCIDENT_NOT_FOUND ,incidentID:req.params.id});
       return res.status(404).json({ message: error });
     }
   }
