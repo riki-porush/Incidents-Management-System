@@ -1,5 +1,4 @@
-
-import { IIncident } from "../pages/incidents/modules/inteface"
+import IIncident from "../interface/incidentInterface";
 
 export function filterRowsBySearch(array: IIncident[], filterString: string): IIncident[] {
  
