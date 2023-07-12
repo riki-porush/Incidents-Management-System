@@ -11,7 +11,7 @@ import TimeLine from './pages/timeLine/timeLine'
 import DemoComponent from './demoTest/DemoComponent'
 import WidgetsStack from './components/Widget/WidgetsStack'
 import Widget from './components/Widget/Widget'
-import Incident from './pages/incidents/incident'
+import IncidentsPage from './pages/incidents/incident'
 
 
 
@@ -49,7 +49,7 @@ function App() {
         <LeftDrawer icons={drawerIcons} />
         
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              <Incident/>
+              <IncidentsPage/>
           {/* <Here put all the components /> */}
         </Box>
       </Box>
