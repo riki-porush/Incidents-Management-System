@@ -13,6 +13,8 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 
 import TimeLine from './pages/timeLine/timeLine'
 import DemoComponent from './demoTest/DemoComponent'
+import WidgetsStack from './components/Widget/WidgetsStack'
+import Widget from './components/Widget/Widget'
 
 
 // const store = configureStore()

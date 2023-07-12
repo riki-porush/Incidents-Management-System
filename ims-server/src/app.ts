@@ -22,7 +22,7 @@ app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/incident', incidentRout)
-app.use('/aggrigation',aggrigationRouter)
+app.use('/aggregation',aggrigationRouter)
 
 
 mongoose
