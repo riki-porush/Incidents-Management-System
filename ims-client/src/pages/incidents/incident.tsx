@@ -5,6 +5,7 @@ import IncidentTable from "../../components/IncidentTable/IncidentTable";
 import WidgetsStack from "../../components/Widget/WidgetsStack";
 
 const Incident = () => {
+
     const [incidents, setIncidents] = useState([])
 
     useEffect(() => {
