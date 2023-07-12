@@ -1,10 +1,11 @@
-import * as React from 'react';
+import React from 'react'
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import { Box } from '@mui/material';
+import theme from '../../theme';
 
 interface WidgetProps{
   title: string;
@@ -36,28 +37,20 @@ export default function Widget({title,aggregation,img}:WidgetProps) {
         <Grid item>
           <ButtonBase sx={{ width: 102, height: 102 }}>
             {img ? <Img src={img} alt={title}/>
-             : <Box sx={{ width: 102, height: 102, borderRadius: '10px', backgroundColor: '#2F854F1A' }}/>}    
+             : <Box sx={{ width: 102, height: 102, borderRadius: '10px', backgroundColor: theme.palette.secondary.light }}/>}    
           </ButtonBase>
         </Grid>
-            <Grid item xs sx={{fontFamily: 'Poppins'}} color="text.primary">
+            <Grid item xs color="text.primary">
               <Typography
                 variant="body2"
-                sx={{
-                  fontWeight: 500,
-                  fontSize: '15px',
-                  lineHeight: '22.5px',
-                }}
               >
                 {title}
               </Typography>
               <Typography
-                variant="body2"
-                sx={{
-                  fontWeight: 400,
-                  fontSize: '46.32px',
-                  lineHeight: '69.48px',
-                  paddingTop:'15px',
-                }}
+                  sx={{fontWeight: 400,
+                    fontSize: '46.32px',
+                    lineHeight: '69.48px',
+                    paddingTop:'15px',}}
               >
                 {formattedAggregation} 
               </Typography>

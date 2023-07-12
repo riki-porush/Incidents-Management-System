@@ -1,35 +1,36 @@
+import { Request, Response } from 'express';
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import express from 'express'
-import mongoose from 'mongoose'
-import swaggerUI from 'swagger-ui-express'
-
 import fs from 'fs'
-import config from './config/config' 
+import swaggerUI from 'swagger-ui-express'
+import config from './config/config'
 import incidentRout from './routes/IncidentRout'
+import aggrigationRouter from './routes/aggrigationRouter'
+import {connect} from './models/db'
+import logger from './loggers/log'
+const port = config.server.port
 
-const swaggerFile: any = (process.cwd() + '/src/Swagger.json')
-const swaggerData: any = fs.readFileSync(swaggerFile, 'utf8')
-const swaggerDocument = JSON.parse(swaggerData)
+
+
+const swaggerFile: any = (process.cwd() + "/src/Swagger.json");
+const swaggerData: any = fs.readFileSync(swaggerFile, 'utf8');
+const swaggerDocument = JSON.parse(swaggerData);
 swaggerDocument.servers[0].url = `http://localhost:${config.server.port}`
 
 const app = express()
-
-app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
+connect()
+app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use(cors())
 app.use(bodyParser.json())
+app.get('/', (req: Request, res: Response): void => {
+  res.send('IMS');
+});
 app.use('/incident', incidentRout)
+app.use('/aggregation',aggrigationRouter)
 
-mongoose
-  .connect(config.mongo.url)
-  .then(() => {
-    console.info('Connected to mongoDB.')
-    const port = config.server.port
-    app.listen(port, () => {
-      console.log(`Server is listening on port ${port}`)
-    })
-  })
-  .catch((error) => {
-    console.error('Unable to connect.')
-    console.error(error)
-  })
+app.listen(port, () => {
+  logger.info(`Server is listeningo on http://localhost:${port}`)
+});
+
+export default app
