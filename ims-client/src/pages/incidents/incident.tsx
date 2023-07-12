@@ -4,7 +4,7 @@ import apiCalls from "../../service/apiCalls";
 import IncidentTable from "../../components/IncidentTable/IncidentTable";
 import WidgetsStack from "../../components/Widget/WidgetsStack";
 
-const Incident = () => {
+const IncidentsPage = () => {
 
     const [incidents, setIncidents] = useState([])
 
@@ -27,4 +27,4 @@ const Incident = () => {
         )
 }
 
-export default Incident
+export default IncidentsPage;
