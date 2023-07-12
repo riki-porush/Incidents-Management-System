@@ -13,3 +13,9 @@ export interface IIncident {
 export interface IIncidents {
     incidents: Array<IIncident>
 }
+
+export interface IAggregation{
+    activeCount: number
+    averageCost: number
+    averageDurationHours: number
+}

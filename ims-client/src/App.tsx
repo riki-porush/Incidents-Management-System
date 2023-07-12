@@ -12,6 +12,8 @@ import { BiHome, BiHomeHeart, BiMessageAdd } from 'react-icons/bi';
 import { AiOutlineSetting } from 'react-icons/ai';
 import TimeLine from './pages/timeLine/timeLine'
 import DemoComponent from './demoTest/DemoComponent'
+import WidgetsStack from './components/Widget/WidgetsStack'
+import Widget from './components/Widget/Widget'
 
 
 
