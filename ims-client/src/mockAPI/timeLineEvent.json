@@ -4,7 +4,8 @@
     "incidentId": "649cbeda942a5d4d8bcf303b",
     "userId": "698cbeda854a5d4d8bcf303l",
     "description": "Finding conflicts.",
-    "priority":"P0",
+    "priority": "P0",
+    "type": "",
     "files": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
@@ -18,7 +19,8 @@
     "incidentId": "649cbeda942a5d4d8bcf303b",
     "userId": "698cbeda854a5d4d8bcf303l",
     "description": "Identification of a problematic factor and treatment.",
-    "priority":"P0",
+    "priority": "P0",
+    "type": "",
     "files": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
@@ -32,7 +34,8 @@
     "incidentId": "649cbeda942a5d4d8bcf303c",
     "userId": "896cbeda224a5d4d8bcf803m",
     "description": "Successful final treatment.",
-    "priority":"P0",
+    "priority": "P0",
+    "type": "",
     "files": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
@@ -46,7 +49,8 @@
     "incidentId": "649cbeda942a5d4d8bcf303c",
     "userId": "896cbeda224a5d4d8bcf803m",
     "description": "Checking relevant components.",
-    "priority":"P0",
+    "priority": "P0",
+    "type": "",
     "files": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
@@ -60,7 +64,8 @@
     "incidentId": "649cbeda942a5d4d8bcf303c",
     "userId": "896cbeda224a5d4d8bcf803m",
     "description": "Identifying the problem.",
-    "priority":"P0",
+    "priority": "P0",
+    "type": "",
     "files": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
@@ -74,7 +79,8 @@
     "incidentId": "649cbeda942a5d4d8bcf303d",
     "userId": "789cbeda854a5d4d8bcf456k",
     "description": "Code adjustments and fixes, configuration settings.",
-    "priority":"P0",
+    "priority": "P0",
+    "type": "",
     "files": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
@@ -88,7 +94,8 @@
     "incidentId": "649cbeda942a5d4d8bcf303d",
     "userId": "789cbeda854a5d4d8bcf456k",
     "description": "Functional tests and integrity tests.",
-    "priority":"P0",
+    "priority": "P0",
+    "type": "",
     "files": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",

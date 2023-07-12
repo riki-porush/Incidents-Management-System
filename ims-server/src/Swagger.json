@@ -12,10 +12,50 @@
     ],
     "tags": [
         {
-            "name": "incident"
+            "name": "incident",
+            "name":"tag"
         }
     ],
     "paths": {
+        "/tag":{
+            "get":{
+                    "tags": [
+                        "tag"
+                    ],
+                    "description": "Retrieve all tags",
+                    "responses": {
+                        "200": {
+                            "description": "successful operation"
+                        },
+                        "400": {
+                            "description": "Invalid status value"
+                        }
+                    }
+            },"post": {
+                    "tags": [
+                        "tag"
+                    ],
+                    "description": "add a tag",
+                    "requestBody": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tag"
+                                },
+                                "required":"true"
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "description": "successful operation"
+                        },
+                        "400": {
+                            "description": "Invalid status value"
+                        }
+                    }
+                }
+                },
         "/incident": {
             "get": {
                 "tags": [
@@ -134,6 +174,17 @@
         },
         "components": {
             "schemas": {
+                "Tag":{
+                    "type":"object",
+                    "properties":{
+                        "name": {
+                            "type": "string"
+                        },
+                        "userId": {
+                            "type": "string"
+                        }
+                    }
+                },
                 "Incident": {
                     "type": "object",
                     "properties": {
