@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import apiCalls from "../../service/apiCalls";
 import IncidentTable from "../../components/IncidentTable/IncidentTable";
+import WidgetsStack from "../../components/Widget/WidgetsStack";
 
 const Incident = () => {
     const [incident, setIncident] = useState([])
@@ -18,7 +19,11 @@ const Incident = () => {
         console.log('incident', incident);
     }, [incident])
 
-    return <IncidentTable rows={incident}/>
+    return (<>
+         <WidgetsStack/>
+        <IncidentTable rows={incident}/>
+        </>
+        )
 }
 
 export default Incident
