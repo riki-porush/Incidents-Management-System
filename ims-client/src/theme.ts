@@ -4,18 +4,25 @@ declare module '@mui/material/styles' {
   interface TypographyVariants {
     date: React.CSSProperties;
     bold: React.CSSProperties;
+    normal: React.CSSProperties;
+    widget:React.CSSProperties;
     longText: React.CSSProperties;
   }
   interface TypographyVariantsOptions {
     date: React.CSSProperties;
     bold: React.CSSProperties;
+    normal: React.CSSProperties;
+    widget:React.CSSProperties;
     longText: React.CSSProperties;
   }
 }
+
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     date: true;
     bold: true;
+    normal: true;
+    widget:true;
     longText: true;
   }
 }
@@ -70,8 +77,7 @@ const theme = createTheme({
       color: ' #5F5F5F',
       display: 'block',
     },
-
-     widget:{
+    widget:{
       fontWeight: 400,
       fontSize: '46.32px',
       lineHeight: '69.48px',
@@ -108,3 +114,22 @@ const theme = createTheme({
   }
 })
 export default theme;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
