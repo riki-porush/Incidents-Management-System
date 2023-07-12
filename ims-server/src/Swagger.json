@@ -116,6 +116,21 @@
                     }
                 }
             }
+        }, "/aggrigation": {
+            "get": {
+                "tags": [
+                    "aggrigation"
+                ],
+                "description": "Retrieve incidents aggrigations",
+                "responses": {
+                    "200": {
+                        "description": "successful get incidents aggrigations"
+                    },
+                    "400": {
+                        "description": "Error aggregate incident"
+                    }
+                }
+            }
         },
         "components": {
             "schemas": {
