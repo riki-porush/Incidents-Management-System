@@ -12,12 +12,10 @@ import logger from './loggers/log'
 const port = config.server.port
 
 
-
 const swaggerFile: any = (process.cwd() + "/src/Swagger.json");
 const swaggerData: any = fs.readFileSync(swaggerFile, 'utf8');
 const swaggerDocument = JSON.parse(swaggerData);
-swaggerDocument.servers[0].url = `http://localhost:${config.server.port}`
-
+swaggerDocument.servers[0].url = `http://localhost:${process.env.SERVER_PORT}`
 const app = express()
 connect()
 app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
