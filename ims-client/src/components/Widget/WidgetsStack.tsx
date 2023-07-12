@@ -8,7 +8,7 @@ import Widget from './Widget';
 
 const NewStack = styled(Stack)(({ theme }) => ({
   '&':{
-    'width': '1,433px',
+    'width': '1433px',
     'height': '170px',
     'top': '123px',
     'left': '122px',
