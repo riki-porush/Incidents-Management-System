@@ -1,4 +1,3 @@
-
 import pino from 'pino';
 import IncidentModel from '../models/IncidentModel';
 import IncidentSchema from '../models/IncidentModel';
@@ -6,36 +5,32 @@ import { Request, Response } from 'express';
 import logger from '../loggers/log';
 import { IIncident } from '../interfaces/IncidentInterface';
 import validate from './incidentValidation';
+import { constants } from '../loggers/constants';
 
 export default class IncidentController {
-  
+
   public async addIncident(req: Request, res: Response) {
     try {
-      const incident = req.body;
-      logger.info('Adding incident:', incident); 
-      const incidentController = new IncidentController();
+      const incident:IIncident = req.body;
       await validate(incident);
-      const createdIncident = await IncidentSchema.create(incident);
-      logger.info('Incident created:', createdIncident); 
+      const createdIncident:IIncident = await IncidentSchema.create(incident);
+      logger.info({sourece:constants.FROM_DATA_PATH,msg:constants.ADD_INCIDENT_SUCCESS, incidentId:createdIncident.id});
       return res.status(200).json(createdIncident);
     }
-     catch (error:any) {
-      logger.error('Error adding incident:', error.message); 
+    catch (error: any) {
+      logger.error({source:constants.FROM_DATA_PATH, err:constants.ERROR_ADDING_INCIDENT});
       return res.status(404).json({ message: error.message });
     }
   }
 
   public async updateIncident(req: Request, res: Response) {
-    try {
-      const incident = await IncidentSchema.findByIdAndUpdate( req.params.id, req.body );
-      if (incident)
-      {
-        logger.info('update incident' ,incident);
+    try {    
+      const incident= await IncidentSchema.findByIdAndUpdate(req.params.id, req.body);
+      if (incident) {
+        logger.info({source:constants.FROM_DATA_PATH, msg:constants.UPDATE_INCIDENT_SUCCESS});
         return res.status(200).json(incident);
       }
-
-    } catch (error:any) {
-      logger.error('Error updating incident:', error.message); // Logging the error message
+    } catch (error: any) {
       return res.status(404).json({ message: error });
     }
   }
@@ -43,10 +38,10 @@ export default class IncidentController {
   public async getAllIncidents(req: Request, res: Response) {
     try {
       const incidents = await IncidentSchema.find();
-      logger.info('get all incident');
+      logger.info({ source: constants.FROM_DATA_PATH, msg: constants.GET_ALL_INCIDENTS_SUCCESS });
       return res.status(200).json(incidents);
-    } catch (error:any) {
-      logger.error('Error getting all incidents:', error.message); // Logging the error message
+    } catch (error: any) {
+      logger.error({source:constants.FROM_DATA_PATH, err:constants.ERROR_GETTING_ALL_ICIDETS});
       return res.status(404).json({ message: error });
     }
   }
@@ -55,17 +50,17 @@ export default class IncidentController {
     try {
       const incident = await IncidentSchema.findById(req.params.id);
 
-      if (incident)
-      {
-        logger.info('get incident by id',incident);
+      if (incident) {
+        logger.info('get incident by id', incident);
         return res.status(200).json(incident);
       }
-        
+
 
       return res.status(404).json({ message: "Incident not found" });
-    } catch (error:any) {
+    } catch (error: any) {
       logger.error('Error getting incident by ID:', error.message); // Logging the error message
       return res.status(404).json({ message: error });
     }
   }
+
 }

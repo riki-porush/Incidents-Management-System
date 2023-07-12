@@ -1,4 +1,6 @@
-export interface IIncident {
+
+export interface IIncident  extends Document{
+    _id: string;
     id: string;
     name: string;
     status: string;
