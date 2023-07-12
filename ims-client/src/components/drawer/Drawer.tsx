@@ -13,6 +13,7 @@ import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import logo from '../../images/logo.png';
+import { ComponentType } from 'react';
 
 const drawerWidth = 240;
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -47,7 +48,14 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
-
+interface Props {
+  icons: IIcon[];
+}
+export interface IIcon {
+  text: string,
+  icon: ComponentType<any>,
+  navigation: string,
+}
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })<AppBarProps>(({ theme, open }) => ({
@@ -83,7 +91,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   })
 );
 
-export default function LeftDrawer() {
+export default function LeftDrawer({ icons }: Props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -105,23 +113,23 @@ export default function LeftDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts', 'All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+          {icons.map((icon, index) => (
+            <ListItem key={icon.text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
-                  justifyContent: 'space-between', 
+                  justifyContent: 'space-between',
                   px: 2.5,
                 }}
               >
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={icon.text} sx={{ opacity: open ? 1 : 0 }} />
                 <ListItemIcon
                   sx={{
                     minWidth: 0,
-                    justifyContent: 'flex-end', 
+                    justifyContent: 'flex-end',
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+               < icon.icon size={24}></icon.icon>
                 </ListItemIcon>
               </ListItemButton>
 

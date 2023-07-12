@@ -27,7 +27,7 @@ app.get('/', (req: Request, res: Response): void => {
   res.send('IMS');
 });
 app.use('/incident', incidentRout)
-app.use('/aggrigation',aggrigationRouter)
+app.use('/aggregation',aggrigationRouter)
 
 app.listen(port, () => {
   logger.info(`Server is listeningo on http://localhost:${port}`)

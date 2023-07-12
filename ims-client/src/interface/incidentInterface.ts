@@ -1,4 +1,4 @@
-export default interface IIncident extends Document {
+export default interface IIncident{
 
     id: string;
     name: string;
