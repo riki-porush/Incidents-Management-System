@@ -4,19 +4,21 @@ declare module '@mui/material/styles' {
   interface TypographyVariants {
     date: React.CSSProperties;
     bold: React.CSSProperties;
+    normal: React.CSSProperties;
     longText: React.CSSProperties;
   }
   interface TypographyVariantsOptions {
     date: React.CSSProperties;
     bold: React.CSSProperties;
+    normal: React.CSSProperties;
     longText: React.CSSProperties;
   }
 }
-
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     date: true;
     bold: true;
+    normal: true;
     longText: true;
   }
 }
@@ -76,6 +78,11 @@ const theme = createTheme({
       lineHeight: '27px',
       display: 'block',
     },
+    normal: {
+      fontStyle: 'normal',
+      fontWeight: 100,
+      lineHeight: 'normal',
+    },
     longText: {
       width: '80%',
       paddingBlock: '30px',
@@ -96,23 +103,3 @@ const theme = createTheme({
   }
 })
 export default theme;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
