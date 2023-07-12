@@ -7,6 +7,7 @@ import swaggerUI from 'swagger-ui-express'
 import config from './config/config'
 import incidentRout from './routes/IncidentRout'
 import aggrigationRouter from './routes/aggrigationRouter'
+import tagRouter from './routes/tagRouter'
 import {connect} from './models/db'
 import logger from './loggers/log'
 const port = config.server.port
@@ -26,6 +27,7 @@ app.get('/', (req: Request, res: Response): void => {
 });
 app.use('/incident', incidentRout)
 app.use('/aggregation',aggrigationRouter)
+app.use('/tag',tagRouter)
 
 app.listen(port, () => {
   logger.info(`Server is listeningo on http://localhost:${port}`)
