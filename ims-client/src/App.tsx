@@ -1,7 +1,4 @@
 
-
-import { Provider } from 'react-redux'
-
 import { ThemeProvider } from '@emotion/react'
 import { Box } from '@mui/material'
 import './App.css'
@@ -37,7 +34,6 @@ import IncidentsPage from './pages/incidents/incident'
 
 function App() {
 
-  const tagOptions = [{ id: "a", name: 'Tag1' }, { id: "b", name: 'Tag2' }, { id: "c", name: 'Tag3' }, { id: "d", name: 'Tag4' }];
   const drawerIcons: IIcon[] = [
     { icon: BiHomeHeart, text: "home", navigation: "./home" },
     { icon: BiHome, text: "dashboard", navigation: "./dashboard" },
@@ -45,6 +41,7 @@ function App() {
     { icon: BiMessageAdd, text: "settings", navigation: "./message" },
 
   ];
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -54,7 +51,6 @@ function App() {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <IncidentsPage/>
           {/* <Here put all the components /> */}
-          {/* <AutocompleteTag tagOptions={tagOptions} ></AutocompleteTag> */}
         </Box>
       </Box>
     </ThemeProvider>
