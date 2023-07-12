@@ -5,23 +5,23 @@ import IncidentTable from "../../components/IncidentTable/IncidentTable";
 import WidgetsStack from "../../components/Widget/WidgetsStack";
 
 const Incident = () => {
-    const [incident, setIncident] = useState([])
+    const [incidents, setIncidents] = useState([])
 
     useEffect(() => {
         const FetchData = async () => {
             const getIncidents = await apiCalls.getIncidents()
-            setIncident(getIncidents)
+            setIncidents(getIncidents)
         }
         FetchData()
     }, [])
 
     useEffect(() => {
-        console.log('incident', incident);
-    }, [incident])
+        console.log('incident', incidents);
+    }, [incidents])
 
     return (<>
          <WidgetsStack/>
-        <IncidentTable rows={incident}/>
+        <IncidentTable rows={incidents}/>
         </>
         )
 }
