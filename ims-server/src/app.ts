@@ -4,17 +4,14 @@ import express from 'express'
 import fs from 'fs'
 import mongoose from 'mongoose'
 import swaggerUI from 'swagger-ui-express'
-
 import config from './config/config'
 import logger from './loggers/log'
 import incidentRout from './routes/IncidentRout'
 
-
 const swaggerFile: any = (process.cwd() + "/src/Swagger.json");
 const swaggerData: any = fs.readFileSync(swaggerFile, 'utf8');
 const swaggerDocument = JSON.parse(swaggerData);
-swaggerDocument.servers[0].url = `http://localhost:${config.server.port}`
-
+swaggerDocument.servers[0].url = `http://localhost:${process.env.SERVER_PORT}`
 const app = express()
 
 app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
