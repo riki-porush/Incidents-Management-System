@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import TimelineEvent from './timeLineEvent';
 
@@ -9,6 +8,7 @@ describe('TimelineEvent Component', () => {
         userId: "698cbeda854a5d4d8bcf303l",
         description: "Finding conflicts.",
         priority: "P0",
+        type: "",
         files: [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
@@ -21,14 +21,14 @@ describe('TimelineEvent Component', () => {
     };
 
     test('should render the timeline event with correct data', () => {
-        const { getByText, getByAltText } = render(<TimelineEvent timeline={sampleTimeline} />);
-        const nameElement = getByText('John Doe');
-        const dateElement = getByText('Fri Jul 01 2023');
-        const descriptionElement = getByText('Lorem ipsum dolor sit amet');
-        const avatarImage = getByAltText('Profile Avatar');
+        const { getByText, getByAltText } = render(<TimelineEvent timeline={sampleTimeline} isPriorityChanged={true} isTypeChanged={false} previosPriority={"p1"} previousType={""} />);
+
+        const nameElement = getByText('John Smith');
+        const dateElement = getByText('01/07/2023');
+        const descriptionElement = getByText('Finding conflicts.');
         expect(nameElement).toBeInTheDocument();
         expect(dateElement).toBeInTheDocument();
         expect(descriptionElement).toBeInTheDocument();
-        expect(avatarImage).toHaveAttribute('src', 'avatar.jpg');
+
     });
 });

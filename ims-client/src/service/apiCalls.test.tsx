@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import apiCalls from "./apiCalls";
 
 jest.mock("axios"); // Mock the axios module
@@ -39,7 +40,7 @@ describe("apiCalls", () => {
                     updatedAt: "2023-06-28T10:30:00.000Z",
                     cost: "850"
                 }]
-            }); // Mock a successful response
+            });
 
             const result = await apiCalls.getIncidents();
 
