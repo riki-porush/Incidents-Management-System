@@ -1,10 +1,16 @@
 import mongoose, { Schema } from 'mongoose'
 import { type IIncident } from '../interfaces/IncidentInterface'
+import { v4 as uuidv4 } from 'uuid';
 
 export const IncidentSchema = new Schema<IIncident>({
-    id: {
+      _id: {
+        type: String,
+        default: uuidv4,
+      },
+      id: {
         type: String,
         required: true,
+        unique: true,
       },
       name: {
         type: String,
@@ -50,10 +56,12 @@ export const IncidentSchema = new Schema<IIncident>({
       createdAt: {
         type: Date,
         required: true,
+        default: Date.now,
       },
       updatedAt: {
         type: Date,
         required: true,
+        default: Date.now,
       },
       cost: {
         type: Number,
