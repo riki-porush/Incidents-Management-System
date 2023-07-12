@@ -1,6 +1,6 @@
 import axios from "axios"
 
-axios.defaults.baseURL = 'http://localhost:7000'
+axios.defaults.baseURL = process.env.REACT_APP_API_KEY
 
 const apiCalls = {
     //להוסיף את כל הקריאות שרת
