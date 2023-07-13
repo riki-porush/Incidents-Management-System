@@ -6,7 +6,7 @@ import "./App.css";
 import LeftDrawer, { IIcon } from "./components/drawer/Drawer";
 import theme from "./theme";
 import React from "react";
-import IncidentsPage from "./pages/incidents/incidentsPage";
+import AddIncidentComp from "./components/AddIncident/addIncidentComp";
 
 function App() {
   const tagOptions = [
@@ -22,6 +22,7 @@ function App() {
     { icon: BiMessageAdd, text: "settings", navigation: "./message" },
   ];
 
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
@@ -29,7 +30,7 @@ function App() {
           <LeftDrawer icons={drawerIcons} />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             {/* <Here put all the components /> */}
-            <IncidentsPage/>
+            <AddIncidentComp></AddIncidentComp>
           </Box>
         </Box>
       </CssBaseline>
@@ -37,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
