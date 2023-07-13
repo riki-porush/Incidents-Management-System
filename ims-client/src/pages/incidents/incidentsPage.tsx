@@ -19,8 +19,8 @@ const IncidentsPage = () => {
   }, [incidents]);
 
   return ( <>
-      <WidgetsStack />
-      <IncidentTable rows={incidents} />
+    <div style={{marginBottom:20}}>  <WidgetsStack /></div>
+    <IncidentTable rows={incidents} />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
-import IncidentsPage from './pages/incidents/incident';
+import IncidentsPage from './pages/incidents/incidentsPage';
 import Timeline from './pages/timeLine/timeLine';
 import {withId} from './HOC'
 export default function Router() {
