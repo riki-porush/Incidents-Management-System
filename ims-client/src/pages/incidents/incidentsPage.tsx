@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import apiCalls from "../../service/apiCalls";
 import IncidentTable from "../../components/IncidentTable/IncidentTable";
-// import WidgetsStack from "../../components/Widget/WidgetsStack";
+import WidgetsStack from "../../components/Widget/WidgetsStack";
 
 const IncidentsPage = () => {
   const [incidents, setIncidents] = useState([]);
@@ -18,9 +18,8 @@ const IncidentsPage = () => {
     console.log("incident", incidents);
   }, [incidents]);
 
-  return (
-    <>
-      {/* <WidgetsStack /> */}
+  return ( <>
+      <WidgetsStack />
       <IncidentTable rows={incidents} />
     </>
   );
