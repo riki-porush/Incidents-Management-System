@@ -27,7 +27,7 @@ const TimeLine: React.FC<IIncidentprops> = (props) => {
                 // timeLine.type != type ? setTypeChanged(true) : setTypeChanged(false)
                 // timeLine.priority != priority ? setPriorityChanged(true) : setPriorityChanged(false)
                 // setPriority(timeLine.priority)
-                // setType(timeLine.type)
+                setType(timeLine.type)
                 const user = userdata.find((u) => u._id === timeLine.userId);
                 const updatedTimeline = {
                     ...timeLine,
