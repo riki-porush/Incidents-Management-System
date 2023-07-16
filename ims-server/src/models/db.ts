@@ -6,7 +6,7 @@ import logger from '../loggers/log';
 dotenv.config();
 
 const connect = () => {
-    mongoose.connect(config.mongo.url, {
+    mongoose.connect(config.mongo.url?config.mongo.url:"", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     } as ConnectOptions)

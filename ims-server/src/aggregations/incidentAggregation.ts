@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { IIncident } from "../interfaces/IncidentInterface";
 import { IncidentSchema } from "../models/IncidentModel";
 import { Request, Response } from 'express';
+import logger from "../loggers/log";
 
 const IncidentModel = mongoose.model<IIncident>('Incident', IncidentSchema);
 
@@ -19,6 +20,8 @@ export default async function aggregateIncident(req: Request, res: Response): Pr
                 },
             },
         ]).exec();
+        logger.info('aggregate incident: ' ,result);
+
         if (result.length > 0) {
             return res.status(200).json(result[0]);
         } else {
@@ -28,8 +31,11 @@ export default async function aggregateIncident(req: Request, res: Response): Pr
                 averageDurationHours: 0,
             })
         } 
-    } catch (error) {
+        
+    } catch (error:any) {
         res.status(404).json(error)
+        logger.error('Error aggregate incident:', error.message); 
+
         }
     } 
 

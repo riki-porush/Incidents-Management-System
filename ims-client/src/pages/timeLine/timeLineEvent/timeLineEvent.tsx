@@ -11,15 +11,15 @@ import { TimelineConnectorWrapper, TimelineDotWrapper, TimelineItemWrapper } fro
 
 
 const timeLineEvent: React.FC<ITimeLineEventprops> = (props) => {
-    const { timeline } = props
-    const { profile, name, description } = timeline
-    const date = dayjs(timeline.createdDate).format("DD/MM/YYYY")
+    const { timeline, isPriorityChanged, isTypeChanged, previousType, previosPriority, name, profile } = props
+    const { description,createdDate } = timeline
+    const date = dayjs(createdDate).format("DD/MM/YYYY")
 
-    return <div style={{ display: 'flex' }}>
+    return <div >
         <TimelineItemWrapper>
             <TimelineSeparator>
                 <TimelineDotWrapper>
-                    <Avatar src={profile} />
+                    <Avatar src={profile} alt={name} />
                 </TimelineDotWrapper>
                 <TimelineConnectorWrapper />
             </TimelineSeparator>
@@ -30,9 +30,15 @@ const timeLineEvent: React.FC<ITimeLineEventprops> = (props) => {
                 <Typography variant='date'>
                     {date.toString()}
                 </Typography>
+
+                {isPriorityChanged === true ? <><Typography variant='boldGreen'> Priority Change: </Typography>
+                    <Typography> {previosPriority} to {timeline.priority}</Typography></> : ""}
+                {isTypeChanged === true ? <><Typography variant='boldGreen'> Type Change: </Typography>
+                    <Typography>{previousType} to {timeline.type}</Typography></> : ""}
                 <Typography variant='longText'>
                     {description}
                 </Typography>
+
             </TimelineContent>
         </TimelineItemWrapper>
         <Attachment />
