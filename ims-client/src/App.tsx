@@ -6,6 +6,7 @@ import "./App.css";
 import LeftDrawer, { IIcon } from "./components/drawer/Drawer";
 import theme from "./theme";
 import React from "react";
+import TimeLine from "./pages/timeLine/timeLine";
 
 function App() {
   const tagOptions = [
