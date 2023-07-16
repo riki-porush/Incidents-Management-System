@@ -22,13 +22,13 @@ connect()
 app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use(cors())
 app.use(bodyParser.json())
-app.get('/', (req: Request, res: Response): void => {
-  res.send('IMS')
-  // res.redirect('/swagger')
-});
 app.use('/incident', incidentRout)
 app.use('/aggregation', aggrigationRouter)
 app.use('/tag', tagRouter)
+
+app.get('/', (req: Request, res: Response): void => {
+  res.redirect('/swagger')
+});
 
 app.listen(port, () => {
   logger.info(`Server is listeningo on http://localhost:${port}`)
