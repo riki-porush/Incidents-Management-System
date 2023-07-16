@@ -82,9 +82,11 @@ const theme = createTheme({
     },
     widget: {
       fontWeight: 400,
-      fontSize: '46.32px',
-      lineHeight: '69.48px',
-      paddingTop: '15px',
+      fontSize: '46px',
+      top:'45px',
+      textAlign: 'left',
+      display:'flex',
+      paddingTop:'10px'
     },
     bold: {
       fontWeight: 500,
