@@ -8,6 +8,7 @@ import React from 'react'
 
 import TimeLine from './pages/timeLine/timeLine'
 import DemoComponent from './demoTest/DemoComponent'
+import SingleLineImageList from './pages/try'
 
 
 
@@ -30,20 +31,23 @@ import DemoComponent from './demoTest/DemoComponent'
 
 
 function App() {
-  const tagOptions = [{id:"a" ,name:'Tag1'}, {id:"b" ,name:'Tag2'}, {id:"c" ,name:'Tag3'}, {id:"d" ,name:'Tag4'}];
- 
+  const tagOptions = [{ id: "a", name: 'Tag1' }, { id: "b", name: 'Tag2' }, { id: "c", name: 'Tag3' }, { id: "d", name: 'Tag4' }];
+
+  const files: string[] = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9hfMxrD1ywcTDkrqvYu2CPDaDifO3AtmLztsKh4ZqkvS1jZdEQ1DWupA9KJCrQ-wnZI&usqp=CAU"
+  ]
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex' }}>
-        <LeftDrawer />
-        <TimeLine/>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          {/* <Here put all the components /> */}
 
-          {/* <AutocompleteTag tagOptions={tagOptions} ></AutocompleteTag> */}
-
-        </Box>
-      </Box>
+     
     </ThemeProvider>
   );
 }
