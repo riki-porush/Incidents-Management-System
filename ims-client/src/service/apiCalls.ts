@@ -1,13 +1,11 @@
 import axios from "axios"
 import  IIncident from "../interface/incidentInterface"
 
-axios.defaults.baseURL = process.env.REACT_APP_API_KEY
-
 const apiCalls = {
     //להוסיף את כל הקריאות שרת
-    getIncidents: () => axios.get(`/incident`).then(response => response.data),
-    getAggregation:() => axios.get(`/aggregation`).then(response => response.data),
-    createIncident:(incident:IIncident) => axios.post(`/incident/addIncident`,incident).then(response => response.data)
+    getIncidents: () => axios.get(`http://127.0.0.1:7000/incident`).then(response => response.data),
+    getAggregation:() => axios.get(`http://127.0.0.1:7000/aggregation`).then(response => response.data),
+    createIncident:(incident:IIncident) => axios.post(`http://127.0.0.1:7000/incident`,incident).then(response => response.data)
 }
 
 export default apiCalls
