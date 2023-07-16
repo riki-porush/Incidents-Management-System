@@ -26,6 +26,7 @@ export default async function submitIncident(prop:FormData) {
 
 
     await apiCalls.createIncident(incidentcR)
+    console.log('I am in submit incident')
 
 
 

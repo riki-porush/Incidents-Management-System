@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import IncidentTable from './IncidentTable';
+import type { StoryObj } from '@storybook/react';
+import IncidentTable from './incidentTable';
 
 const meta = {
     title: 'Components/IncidentTable',
