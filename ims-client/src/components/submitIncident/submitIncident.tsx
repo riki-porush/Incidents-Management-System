@@ -11,7 +11,7 @@ export default async function submitIncident(prop:FormData) {
         //Remove the id
         id: "1",
         name: prop.name,
-        status:"Active",
+        status:"Open",
         description:prop.description,
         priority: prop.priority,
         type: prop.type,
@@ -27,6 +27,7 @@ export default async function submitIncident(prop:FormData) {
 
     await apiCalls.createIncident(incidentcR)
     console.log('I am in submit incident')
+
 
 
 }

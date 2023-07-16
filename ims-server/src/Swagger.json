@@ -122,7 +122,38 @@
                         "description": "Invalid status value"
                     }
                 }
-            },
+            }
+        },
+        "/incident/addIncident": {
+            "post": {
+                "tags": [
+                    "incident"
+                ],
+                "description": "add an incident",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Incident"
+                            }
+                        },
+                        "id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "/incident/updateIncident/{id}": {
             "put": {
                 "tags": [
                     "incident"
