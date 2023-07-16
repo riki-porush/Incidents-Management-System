@@ -6,7 +6,7 @@ import "./App.css";
 import LeftDrawer, { IIcon } from "./components/drawer/Drawer";
 import theme from "./theme";
 import React from "react";
-import IncidentsPage from "./pages/incidents/incidentsPage";
+import Router from "./routes";
 
 function App() {
   const tagOptions = [
@@ -29,7 +29,7 @@ function App() {
           <LeftDrawer icons={drawerIcons} />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             {/* <Here put all the components /> */}
-            <IncidentsPage/>
+            <Router></Router>
           </Box>
         </Box>
       </CssBaseline>
