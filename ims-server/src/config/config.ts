@@ -2,17 +2,13 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-// DECLARE ALL VARIABLES
-const SERVER_PORT = 7002
-const MONGO_URL_LOCAL = 'mongodb+srv://fiverrkamatech:DBpassword23@clusterims.htyanst.mongodb.net/imsdb'
-
 // CREATE CONFIG OBJECT
 const config = {
   mongo: {
-    url: MONGO_URL_LOCAL
+    url: process.env.MONGO_URL_LOCAL
   },
   server: {
-    port: SERVER_PORT
+    port: process.env.SERVER_PORT
   }
 }
 

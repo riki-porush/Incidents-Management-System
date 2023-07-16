@@ -1,10 +1,12 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit"
+import IIncident from "../../../interface/incidentInterface"
 
-import { IIncidents } from "./inteface"
 
 export const INCIDENT_STATE_KEY = 'INCIDENT'
-
-const initialState: IIncidents = { incidents: [] }
+type State = {
+    incidents: IIncident[]
+}
+const initialState: State = { incidents: [] }
 
 const slice = createSlice({
     name: INCIDENT_STATE_KEY,

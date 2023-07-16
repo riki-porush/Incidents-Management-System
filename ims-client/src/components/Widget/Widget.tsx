@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react'
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -47,13 +47,10 @@ export default function Widget({title,aggregation,img}:WidgetProps) {
                 {title}
               </Typography>
               <Typography
-                variant="body2"
-                sx={{
-                  fontWeight: 400,
-                  fontSize: '46.32px',
-                  lineHeight: '69.48px',
-                  paddingTop:'15px',
-                }}
+                  sx={{fontWeight: 400,
+                    fontSize: '46.32px',
+                    lineHeight: '69.48px',
+                    paddingTop:'15px',}}
               >
                 {formattedAggregation} 
               </Typography>
