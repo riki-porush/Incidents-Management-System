@@ -1,8 +1,6 @@
 import axios from "axios"
 import  IIncident from "../interface/incidentInterface"
 
-axios.defaults.baseURL = process.env.REACT_APP_API_KEY
-
 const apiCalls = {
     //להוסיף את כל הקריאות שרת
     getIncidents: () => axios.get(`/incident`).then(response => response.data),
