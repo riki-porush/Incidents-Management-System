@@ -123,7 +123,7 @@
                 }
             }
         },
-        "/incident/updateIncidence/{id}": {
+        "/incident/updateIncident/{id}": {
             "put": {
                 "tags": [
                     "incident"
@@ -156,7 +156,8 @@
                     }
                 }
             }
-        }, "/aggrigation": {
+        },
+        "/aggrigation": {
             "get": {
                 "tags": [
                     "aggrigation"
