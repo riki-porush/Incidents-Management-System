@@ -1,14 +1,15 @@
-import { GridColDef } from "@mui/x-data-grid";
+import { GridColDef, GridColumnHeaderParams, GridColumnVisibilityModel } from "@mui/x-data-grid";
 import React, { useState } from "react";
-import Search from "../Search/Search";
+import Search from "../search/search";
 import {
   filterRowsBySearch,
   filterRowsByStatus,
 } from "../../service/incidentTableService";
-import Table from "../Table/Table";
+import Table from "../table/table";
 import UpTabs from "../tabs/Tabs";
 import IIncident from "../../interface/incidentInterface";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+
 
 export type EventProps = {
   onEvent: (functionName: string) => void;
@@ -17,17 +18,98 @@ export type EventProps = {
 
 export interface IInceidentTableProps {
   rows: IIncident[];
+  isLoading: boolean;
 }
+export interface ICollumnHeader {
+  params: GridColumnHeaderParams
+}
+const ColumnHeader: React.FC<ICollumnHeader> = ({ params }) => {
+  return (
+    <Typography variant="bold" >
+      {params.colDef.headerName}
+    </Typography>)
+}
+const IncidentTable: React.FC<IInceidentTableProps> = ({ rows, isLoading }) => {
 
-const IncidentTable: React.FC<IInceidentTableProps> = ({ rows }) => {
+  const visibilityModel: GridColumnVisibilityModel =
+  {
+    id: false,
+    type: false,
+    date: false,
+    tags: false,
+    updatedAt: false,
+    createdAt: false,
+    slackLink: false,
+  };
+
   const columns: GridColDef[] = [
-    { field: "name", headerName: "Name", width: 180 },
-    { field: "description", headerName: "Description", width: 200 },
-    { field: "priority", headerName: "Priority", width: 120 },
-    { field: "slackLink", headerName: "Slack Link", width: 200 },
-    { field: "cost", headerName: "Cost", width: 120 },
-    { field: "type", headerName: "Type", width: 120 },
+    {
+      field: "id", headerName: "Id", minWidth: 150, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "name", headerName: "Name", minWidth: 200, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "status", headerName: "Status", minWidth: 150, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "description", headerName: "Description", minWidth: 250, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "priority", headerName: "Priority", minWidth: 150, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "type", headerName: "Type", minWidth: 150, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "durationHours", headerName: "Duration (Hours)", minWidth: 200, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "slackLink", headerName: "Slack Link", minWidth: 200, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "tags", headerName: "Tags", minWidth: 200, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "date", headerName: "Date", minWidth: 150, maxWidth: 1700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "createdAt", headerName: "Created At", minWidth: 200, flex: 1,
+      maxWidth: 500, renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "updatedAt", headerName: "Updated At", minWidth: 200, maxWidth: 700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
+    {
+      field: "cost", headerName: "Cost", minWidth: 150, maxWidth: 700, flex: 1,
+      renderHeader: (params: GridColumnHeaderParams) =>
+        <ColumnHeader params={params} />
+    },
   ];
+
   const someFunction = () => {
     console.log("The event was triggered!");
     filteredRows = filterRowsBySearch(rows, searchValue);
@@ -44,7 +126,7 @@ const IncidentTable: React.FC<IInceidentTableProps> = ({ rows }) => {
     <Box>
       <UpTabs onEvent={someFunction} setValue={setStatusValue}></UpTabs>
       <Search onEvent={someFunction} setValue={setSearchValue} />
-      <Table columns={columns} rows={filteredRows}></Table>
+      <Table columns={columns} rows={filteredRows} isLoading={isLoading} visibilityModel={visibilityModel}></Table>
     </Box>
   );
 };
