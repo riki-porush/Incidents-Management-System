@@ -1,12 +1,13 @@
 import { ThemeProvider } from "@emotion/react";
 import { Box, CssBaseline } from "@mui/material";
 import { AiOutlineSetting } from "react-icons/ai";
+import React from "react";
 import { BiHome, BiHomeHeart, BiMessageAdd } from "react-icons/bi";
+
 import "./App.css";
 import LeftDrawer, { IIcon } from "./components/drawer/Drawer";
 import theme from "./theme";
-import React from "react";
-import TimeLine from "./pages/timeLine/timeLine";
+import IncidentsPage from "./pages/incidents/incidentsPage";
 
 function App() {
   const tagOptions = [
@@ -22,7 +23,6 @@ function App() {
     { icon: BiMessageAdd, text: "settings", navigation: "./message" },
   ];
 
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
@@ -30,6 +30,7 @@ function App() {
           <LeftDrawer icons={drawerIcons} />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             {/* <Here put all the components /> */}
+            <IncidentsPage/>
           </Box>
         </Box>
       </CssBaseline>

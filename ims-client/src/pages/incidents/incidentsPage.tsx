@@ -18,10 +18,9 @@ const IncidentsPage = () => {
     console.log("incident", incidents);
   }, [incidents]);
 
-  return (
-    <>
-      <WidgetsStack />
-      <IncidentTable rows={incidents} />
+  return ( <>
+    <div style={{marginBottom:20}}>  <WidgetsStack /></div>
+    <IncidentTable rows={incidents} />
     </>
   );
 };
