@@ -1,11 +1,12 @@
 import { ThemeProvider } from "@emotion/react";
 import { Box, CssBaseline } from "@mui/material";
 import { AiOutlineSetting } from "react-icons/ai";
+import React from "react";
 import { BiHome, BiHomeHeart, BiMessageAdd } from "react-icons/bi";
+
 import "./App.css";
 import LeftDrawer, { IIcon } from "./components/drawer/Drawer";
 import theme from "./theme";
-import React from "react";
 import Router from "./routes";
 
 function App() {
