@@ -128,7 +128,7 @@ const IncidentTable: React.FC<IInceidentTableProps> = ({ rows, isLoading }) => {
       <UpTabs onEvent={someFunction} setValue={setStatusValue}></UpTabs>
       <Search onEvent={someFunction} setValue={setSearchValue} />
       <AddIncidentComp></AddIncidentComp>
-      <Table columns={columns} rows={filteredRows}></Table>
+      <Table columns={columns} rows={filteredRows} isLoading={isLoading} visibilityModel={visibilityModel}></Table>
     </Box>
   );
 };
