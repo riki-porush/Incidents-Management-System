@@ -9,6 +9,7 @@ import Table from "../Table/Table";
 import UpTabs from "../tabs/Tabs";
 import IIncident from "../../interface/incidentInterface";
 import { Box } from "@mui/material";
+import AddIncidentComp from "../AddIncident/addIncidentComp";
 
 export type EventProps = {
   onEvent: (functionName: string) => void;
@@ -44,6 +45,7 @@ const IncidentTable: React.FC<IInceidentTableProps> = ({ rows }) => {
     <Box>
       <UpTabs onEvent={someFunction} setValue={setStatusValue}></UpTabs>
       <Search onEvent={someFunction} setValue={setSearchValue} />
+      <AddIncidentComp></AddIncidentComp>
       <Table columns={columns} rows={filteredRows}></Table>
     </Box>
   );
