@@ -71,9 +71,7 @@ export default function AddIncident({ open, onClose }: Props) {
     alignItems: 'flex-start',
     gap: '20px',
     padding: '30px 31px',
-    // padding: '8px 8px',
     borderRadius: '20px',
-    // width:'500',
   };
 
   const backdropStyles: React.CSSProperties = {
@@ -90,7 +88,7 @@ export default function AddIncident({ open, onClose }: Props) {
             <Grid item xs={12}>
               <FormControl fullWidth>
                 <label htmlFor="name">Incident Name</label>
-                <TextFieldInput multiline rows={1} size="small"
+                <TextFieldInput placeholder="Incident Name" multiline rows={1} size="small"
                   {...register("name", {
                     required: "Name is required",
                   })} />
