@@ -11,7 +11,7 @@ export default async function submitIncident(prop:FormData) {
         //Remove the id
         id: "1",
         name: prop.name,
-        status:"Open",
+        status:"Active",
         description:prop.description,
         priority: prop.priority,
         type: prop.type,
