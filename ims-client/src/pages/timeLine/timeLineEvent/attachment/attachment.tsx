@@ -50,12 +50,13 @@ const Attachment: React.FC<AttachmentProps> = ({ attachmentFile, numberOfImages 
     bottom: 10,
     right: 10,
   };
-
+//mnn
   return (
     <div>
       <div style={styleMap[numberOfImages]}>
         <img src={attachmentFile} style={styleMap[numberOfImages]}  />
         <FileDownload style={iconStyle} />
+        
       </div>
     </div>
   );
