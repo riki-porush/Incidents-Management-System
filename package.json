@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "aws-sdk": "^2.1415.0",
     "react-image-size": "^2.0.2"
   }
 }
